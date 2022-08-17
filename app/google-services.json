@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "536895052428",
+    "project_id": "emergon-efb35",
+    "storage_bucket": "emergon-efb35.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:536895052428:android:cddaee1a278328d6de39a9",
+        "android_client_info": {
+          "package_name": "com.example.emergon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "536895052428-mrllhrbl336en9usg29grovqcolmer40.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnVrbYw3Spy5nn4pPvUJicEKS12ICcvc0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "536895052428-mrllhrbl336en9usg29grovqcolmer40.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
