@@ -16,8 +16,8 @@ public class patient_login extends AppCompatActivity {
     }
 
     public void openActivity(View view) {
-        Toast.makeText(this, "opening physical Activity", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, physical.class);
+        Toast.makeText(this, "opening patient Activity", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, patient.class);
         startActivity(intent);
     }
     public void openlogin(View view) {
