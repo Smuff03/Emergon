@@ -17,8 +17,7 @@
             android:name=".patient"
             android:exported="false"
             android:label="@string/title_activity_patient"
-            android:theme="@style/Theme.Emergon.NoActionBar"
-            android:parentActivityName=".patient_login"/>
+            android:theme="@style/Theme.Emergon.NoActionBar" />
         <activity
             android:name=".hospital_new"
             android:exported="false"
@@ -34,11 +33,7 @@
             android:exported="false"
             android:label="Patient New Login"
             android:parentActivityName=".patient_login" />
-        <activity
-            android:name=".physical"
-            android:exported="false"
-            android:label="Physical"
-            android:parentActivityName=".patient_login" />
+
         <activity
             android:name=".patient_login"
             android:exported="false"
