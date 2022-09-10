@@ -63,4 +63,14 @@
         app:layout_constraintHorizontal_bias="0.301"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName5"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword5" />
+
+    <CheckBox
+        android:id="@+id/cb4"
+        android:layout_width="206dp"
+        android:layout_height="38dp"
+        android:text="remember me"
+        app:layout_constraintBottom_toTopOf="@+id/button6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword5" />
 </androidx.constraintlayout.widget.ConstraintLayout>
