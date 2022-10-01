@@ -36,4 +36,19 @@
         android:background="#fafafa"
         android:text="Login" />
 
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Use Login Password instead" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:visibility="invisible"
+        />
+
 </LinearLayout>

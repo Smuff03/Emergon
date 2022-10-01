@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this,bio.class);
             startActivity(intent);}
             else if(log.equals("hospital")){
-                Intent intent = new Intent(MainActivity.this,hlogin.class);
+                Intent intent = new Intent(MainActivity.this,bio.class);
                 startActivity(intent);
             }
         }else if(checkbox.equals("false")){

@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.example.emergon.ui.gallery.GalleryFragment"
+        android:name="com.example.emergon.casefolder"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_casefolder" />
 
     <fragment
         android:id="@+id/nav_slideshow"
