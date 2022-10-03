@@ -20,20 +20,6 @@
         android:theme="@style/Theme.Emergon"
         tools:targetApi="31">
         <activity
-            android:name=".Adhar_verification_page"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Scanner_page"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".hlogin"
             android:exported="false" />
         <activity
