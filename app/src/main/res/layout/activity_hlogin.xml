@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,26 +16,61 @@
         android:layout_marginTop="150dp"
         android:textFontWeight="@integer/material_motion_duration_medium_2"
         tools:targetApi="p" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
+    <ImageButton
+        android:id="@+id/Scanner_btn"
+        android:layout_width="66dp"
+        android:layout_height="64dp"
         android:layout_below="@id/Hlogin"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:textAlignment="center"
+        android:width="200dp"
         android:text="QR Scanner"
-        android:width="200dp"
-        android:id="@+id/Scanner_btn"
-        />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/Scanner_btn"
-        android:layout_centerHorizontal="true"
-        android:width="200dp"
-        android:id="@+id/Adhhar_btn"
-        android:layout_marginTop="50dp"
         android:textAlignment="center"
+        app:srcCompat="@drawable/ic_baseline_qr_code_scanner_24" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Scanner_btn"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="148dp"
+        android:text="Scanner"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
+    <ImageButton
+        android:id="@+id/Adhhar_btn"
+        android:layout_width="97dp"
+        android:layout_height="75dp"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="158dp"
+        android:width="200dp"
         android:text="Addhar no."
-        />
+        android:textAlignment="center"
+        app:srcCompat="@drawable/ic_baseline_credit_card_24" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="168dp"
+        android:layout_height="29dp"
+        android:layout_below="@+id/Adhhar_btn"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="182dp"
+        android:text="Aadhaar Card No."
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
 </RelativeLayout>
