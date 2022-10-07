@@ -23,6 +23,7 @@ public class patient_login extends AppCompatActivity {
         un= findViewById(R.id.Username);
         pass = findViewById(R.id.Password);
         cb = findViewById(R.id.cb2);
+
         b = findViewById(R.id.button3);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,7 +33,10 @@ public class patient_login extends AppCompatActivity {
 
                 if(uname.isEmpty() || ps.isEmpty()){
                     Toast.makeText(patient_login.this,"please enter all data",Toast.LENGTH_SHORT).show();
-                }else{
+                }else if(ps != "test123"){
+                    makeToast("mc password dal");
+                }
+                else{
                     SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
                     SharedPreferences.Editor editor = preferences.edit();
                     editor.putString("patient_name",uname);
@@ -77,5 +81,10 @@ public class patient_login extends AppCompatActivity {
         Toast.makeText(this, "opening physical Activity", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, patient_new.class);
         startActivity(intent);
+    }
+    Toast msg;
+    private void makeToast(String s){
+           if ( msg != null) msg.cancel();
+            msg = Toast.makeText(getApplicationContext(),s, Toast.LENGTH_SHORT);
     }
 }
