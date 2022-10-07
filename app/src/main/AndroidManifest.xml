@@ -34,6 +34,12 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".Scanner_page"
+            android:exported="false" />
+        <activity
+            android:name=".Addhar_verfi_page"
+            android:exported="false" />
+        <activity
             android:name=".hlogin"
             android:exported="false" />
         <activity

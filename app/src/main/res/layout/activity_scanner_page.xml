@@ -6,13 +6,58 @@
     android:layout_height="match_parent"
     tools:context=".Scanner_page">
 
-    <TextView
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/scanuser"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Scanner"
-        android:textAlignment="center"
-        android:textSize="40sp"
-        android:id="@+id/Scanner_txt"
-        />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="78dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginBottom="632dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/scanbtt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="137dp"
+        android:layout_marginEnd="180dp"
+        android:layout_marginBottom="338dp"
+        android:onClick="onClick"
+        android:text="scan" />
+
+    <Button
+        android:id="@+id/btnverifyOTP1"
+        android:layout_width="313dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="521dp"
+        android:enabled="false"
+        android:onClick="check"
+        android:text="Verify OTP"
+        android:textSize="20dp" />
+
+    <ProgressBar
+        android:id="@+id/bar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="162dp"
+        android:layout_marginEnd="201dp"
+        android:layout_marginBottom="239dp"
+        android:visibility="invisible" />
 
 </RelativeLayout>
