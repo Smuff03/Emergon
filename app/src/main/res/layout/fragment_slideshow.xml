@@ -6,15 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:layout_margin="10dp">
+
     <TextView
         android:id="@+id/text"
-        android:layout_width="match_parent"
+        android:layout_width="206dp"
         android:layout_height="wrap_content"
-        android:text="Enter Your Phone No."
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:textSize="20dp"
-        android:layout_centerHorizontal="true"/>
+        android:text="Enter Your Phone No."
+        android:textSize="20dp" />
 
     <EditText
         android:id="@+id/phone"
@@ -60,18 +60,14 @@
         android:layout_centerHorizontal="true"
         android:visibility="invisible" />
 
-    <Button
-        android:id="@+id/slideshowscan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/bar"
-        android:layout_alignParentStart="true"
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="82dp"
+        android:layout_height="41dp"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="138dp"
-        android:layout_marginTop="142dp"
-        android:layout_marginEnd="159dp"
-        android:layout_marginBottom="140dp"
-        android:text="Scan Code" />
+        android:layout_marginStart="39dp"
+        android:layout_marginEnd="65dp"
+        android:layout_toEndOf="@+id/text"
+        app:srcCompat="@drawable/ic_baseline_qr_code_scanner_24" />
 
 </RelativeLayout>

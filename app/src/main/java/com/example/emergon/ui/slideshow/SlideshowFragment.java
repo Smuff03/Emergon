@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +24,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.emergon.R;
+import com.example.emergon.Scanner_page;
 import com.example.emergon.databinding.FragmentSlideshowBinding;
 import com.example.emergon.ui.gallery.GalleryFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -40,6 +42,7 @@ public class SlideshowFragment extends Fragment {
     private FragmentSlideshowBinding binding;
     EditText phone, otp;
     Button btngenOTP, btnverify;
+    ImageButton ib;
     FirebaseAuth mAuth;
     String verificationID;
     ProgressBar bar;
@@ -54,11 +57,19 @@ public class SlideshowFragment extends Fragment {
         View root = binding.getRoot();
         phone = root.findViewById(R.id.phone);
         otp = root.findViewById(R.id.otp);
+        ib = root.findViewById(R.id.imageButton);
         btngenOTP = root.findViewById(R.id.btngenerateOTP);
         btnverify =root.findViewById(R.id.btnverifyOTP);
         mAuth = FirebaseAuth.getInstance();
         bar = root.findViewById(R.id.bar);
         Activity activity = getActivity();
+        ib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Activity activity = getActivity();
+                startActivity(new Intent(activity, Scanner_page.class));
+            }
+        });
         btngenOTP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
