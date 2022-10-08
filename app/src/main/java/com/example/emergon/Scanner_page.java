@@ -57,13 +57,12 @@ public class Scanner_page extends AppCompatActivity implements View.OnClickListe
                 scanCode();
                 break;
             case R.id.btnverifyOTP1:
-                if(TextUtils.isEmpty(vp.getText().toString()))
+                if(TextUtils.isEmpty(edt.getText().toString()))
                 {
                     Toast.makeText(Scanner_page.this, "Wrong OTP Entered", Toast.LENGTH_SHORT).show();
                 }
                 else
-                    verifycode(vp.getText().toString());
-
+                    verifycode(edt.getText().toString());
                 break;
             default:
                 break;
