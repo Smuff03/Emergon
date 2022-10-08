@@ -19,7 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Emergon"
         tools:targetApi="31">
-
+        <activity
+            android:name=".gaurdian_list_view"
+            android:exported="false" />
         <activity
             android:name=".Scanner_page"
             android:exported="false" />

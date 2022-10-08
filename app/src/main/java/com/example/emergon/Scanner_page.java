@@ -31,7 +31,7 @@ import com.google.zxing.integration.android.IntentResult;
 import java.util.concurrent.TimeUnit;
 
 public class Scanner_page extends AppCompatActivity implements View.OnClickListener{
-    private EditText edt;
+    private EditText edt,ng;
     private Button sb,vp;
     FirebaseAuth mAuth;
     String verificationID;
@@ -44,17 +44,12 @@ public class Scanner_page extends AppCompatActivity implements View.OnClickListe
         edt = findViewById(R.id.scanuser);
         sb = findViewById(R.id.scanbtt);
         vp = findViewById(R.id.btnverifyOTP1);
+        ng=findViewById(R.id.gni);
         mAuth = FirebaseAuth.getInstance();
+        bar = findViewById(R.id.bar1);
         sb.setOnClickListener(this);
         vp.setOnClickListener(this);
-
-        bar = findViewById(R.id.bar1);
     }
-
-//    private void check(View view) {
-//        Toast.makeText(this,"No Results",Toast.LENGTH_LONG).show();
-//    }
-
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -73,7 +68,6 @@ public class Scanner_page extends AppCompatActivity implements View.OnClickListe
             default:
                 break;
         }
-      // scanCode();
     }
 
     private void scanCode(){

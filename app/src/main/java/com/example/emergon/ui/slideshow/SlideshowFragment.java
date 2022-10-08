@@ -26,6 +26,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.emergon.R;
 import com.example.emergon.Scanner_page;
 import com.example.emergon.databinding.FragmentSlideshowBinding;
+import com.example.emergon.gaurdian_list_view;
 import com.example.emergon.ui.gallery.GalleryFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -41,7 +42,7 @@ import java.util.concurrent.TimeUnit;
 public class SlideshowFragment extends Fragment {
     private FragmentSlideshowBinding binding;
     EditText phone, otp;
-    Button btngenOTP, btnverify;
+    Button btngenOTP, btnverify,vg;
     ImageButton ib;
     FirebaseAuth mAuth;
     String verificationID;
@@ -60,9 +61,16 @@ public class SlideshowFragment extends Fragment {
         ib = root.findViewById(R.id.imageButton);
         btngenOTP = root.findViewById(R.id.btngenerateOTP);
         btnverify =root.findViewById(R.id.btnverifyOTP);
+        vg = root.findViewById(R.id.viewg);
         mAuth = FirebaseAuth.getInstance();
         bar = root.findViewById(R.id.bar);
         Activity activity = getActivity();
+        vg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(activity, gaurdian_list_view.class));
+            }
+        });
         ib.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

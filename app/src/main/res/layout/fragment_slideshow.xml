@@ -6,22 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:layout_margin="10dp">
+
     <TextView
         android:id="@+id/text"
+        android:layout_width="200dp"
+        android:layout_height="47dp"
+        android:layout_below="@id/imageButton"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="20dp"
+        android:text="Enter Your Phone No."
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/gaurdian_name_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter Your Phone No."
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:textSize="20dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_below="@id/text"
+        android:hint="Name of the Gaurdian" />
 
     <EditText
         android:id="@+id/phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/text"
-        android:layout_marginBottom="20dp"
+        android:layout_below="@id/gaurdian_name_input"
+        android:layout_marginTop="20dp"
         android:hint="Phone No."
         android:inputType="phone" />
     <Button
@@ -29,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/phone"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
         android:text="Generate OTP"
         android:textSize="20dp"/>
 
@@ -38,7 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/btngenerateOTP"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
         android:hint="OTP"
         android:inputType="number" />
 
@@ -47,7 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/otp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
         android:enabled="false"
         android:text="Verify OTP"
         android:textSize="20dp" />
@@ -58,20 +66,28 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnverifyOTP"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:visibility="invisible" />
 
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="-4dp"
+        android:layout_toEndOf="@+id/text"
+        app:srcCompat="@drawable/ic_baseline_qr_code_scanner_24" />
+
     <Button
-        android:id="@+id/slideshowscan"
+        android:id="@+id/viewg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/bar"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="138dp"
-        android:layout_marginTop="142dp"
-        android:layout_marginEnd="159dp"
-        android:layout_marginBottom="140dp"
-        android:text="Scan Code" />
+        android:layout_below="@id/bar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="View all Gaurdians" />
 
 </RelativeLayout>
