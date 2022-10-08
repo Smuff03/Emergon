@@ -41,7 +41,7 @@ import java.util.concurrent.TimeUnit;
 
 public class casefolder extends Fragment {
     private FragmentCasefolderBinding binding;
-    private ImageView iv1,iv2;
+    private ImageView iv1,iv2,iv3,iv4;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -50,7 +50,9 @@ public class casefolder extends Fragment {
         binding  = FragmentCasefolderBinding.inflate(inflater,container,false);
         View root = binding.getRoot();
         iv1 = root.findViewById(R.id.Medicine);
-        iv2 = root.findViewById(R.id.Emergency);
+        iv2 = root.findViewById(R.id.Cardiology);
+        iv3 = root.findViewById(R.id.Skin);
+        iv4 = root.findViewById(R.id.Neurology);
         Activity activity = getActivity();
         iv1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +65,18 @@ public class casefolder extends Fragment {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(activity , emergency.class));
+            }
+        });
+        iv3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(activity , skin.class));
+            }
+        });
+        iv4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(activity , neurology.class));
             }
         });
 

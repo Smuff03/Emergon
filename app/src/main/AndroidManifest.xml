@@ -20,16 +20,21 @@
         android:theme="@style/Theme.Emergon"
         tools:targetApi="31">
         <activity
+            android:name=".neurology"
+            android:exported="false" />
+        <activity
+            android:name=".skin"
+            android:exported="false" />
+        <activity
             android:name=".emergency"
             android:exported="false"
             android:label="Emergency"
-            android:parentActivityName=".casefolder"/>
-
+            android:parentActivityName=".casefolder" />
         <activity
             android:name=".medicine"
             android:exported="false"
             android:label="Medicine"
-            android:parentActivityName=".casefolder"/>
+            android:parentActivityName=".casefolder" />
         <activity
             android:name=".gaurdian_list_view"
             android:exported="false" />
