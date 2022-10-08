@@ -30,31 +30,11 @@ public class patient_login extends AppCompatActivity {
             public void onClick(View view) {
                 String uname = un.getText().toString();
                 String ps = pass.getText().toString();
-                String upperCaseChars = "(.*[A-Z].*)";
-                String lowerCaseChars = "(.*[a-z].*)";
-                String numbers = "(.*[0-9].*)";
-                String specialChars = "(.*[@,#,$,%].*$)";
 
                 if(uname.isEmpty() || ps.isEmpty()){
                     Toast.makeText(patient_login.this,"please enter all data",Toast.LENGTH_SHORT).show();
-                }else if (ps.length() > 15 || ps.length() < 8)
-                {
-                    makeToast("Password must me within 8 - 15 char");
-                }
-                else if (!ps.matches(upperCaseChars ))
-                {
-                    makeToast("Password must consist one capital letter");
-                } else if (!ps.matches(lowerCaseChars ))
-                {
-                    makeToast("Passwor must contain lower cases");
-                } else if (!ps.matches(numbers ))
-                {
-                    makeToast("Password must consist some numerical");
-                } else if (!ps.matches(specialChars ))
-                {
-                    makeToast("Password must contain some special character");
-                } else if(ps != "Test@123"){
-                    makeToast("mc password dal sahi wala");
+                } else if(ps != "Test@123" && uname != "admin"){
+                    makeToast("Enter correct Details");
                 }
                 else{
                     SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
@@ -105,7 +85,7 @@ public class patient_login extends AppCompatActivity {
     Toast msg;
     private void makeToast(String s){
            if ( msg != null) msg.cancel();
-            msg = Toast.makeText(getApplicationContext(),s, Toast.LENGTH_SHORT);
+           Toast.makeText(getApplicationContext(),s, Toast.LENGTH_SHORT).show();
     }
     public boolean isValidPassword(String password)
     {
