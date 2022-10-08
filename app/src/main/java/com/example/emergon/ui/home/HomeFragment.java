@@ -3,14 +3,11 @@ package com.example.emergon.ui.home;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -18,12 +15,16 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.emergon.R;
 import com.example.emergon.databinding.FragmentHomeBinding;
+import com.example.emergon.dataholder;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
-    EditText pt_phone;
     Button homebut;
+    EditText ad,dob,email,ph,age,hg,wg,mc,n,bg;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -33,21 +34,31 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         Activity activity = getActivity();
-        pt_phone = root.findViewById(R.id.pat_phoneno);
+
+        SharedPreferences preferences = activity.getSharedPreferences("checkbox",activity.MODE_PRIVATE);
+        String uname = preferences.getString("patient_name","");
+        String ps = preferences.getString("patient_pass","");
+        ph = root.findViewById(R.id.pat_phoneno);
         homebut = root.findViewById(R.id.homeconfirm);
+        n =  root.findViewById(R.id.editTextTextPersonName7);
+        ad = root.findViewById(R.id.editTextNumber5);
+        dob = root.findViewById(R.id.editTextDate);
+        email = root.findViewById(R.id.editTextTextEmailAddress);
+        ph = root.findViewById(R.id.pat_phoneno);
+        age = root.findViewById(R.id.editTextNumber2);
+        hg = root.findViewById(R.id.editTextNumber3);;
+        wg = root.findViewById(R.id.editTextNumber4);
+        mc = root.findViewById(R.id.editTextTextPersonName9);
+        bg = root.findViewById(R.id.editTextTextPersonName8);
+
         homebut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String phone = String.valueOf(pt_phone);
-                if(TextUtils.isEmpty(phone)){
-                    Toast.makeText(activity, "Enter Valid Phone No.", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    SharedPreferences preferences = activity.getSharedPreferences("checkbox",activity.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = preferences.edit();
-                    editor.putString("pat_phone",phone);
-                    editor.apply();
-                }
+                dataholder obj=new dataholder(uname,ps,n.getText().toString(),ad.getText().toString(),dob.getText().toString(),email.getText().toString(),ph.getText().toString(),age.getText().toString(),hg.getText().toString(),wg.getText().toString(),mc.getText().toString());
+                FirebaseDatabase db=FirebaseDatabase.getInstance();
+                DatabaseReference node= db.getReference(uname);
+
+                node.child(uname).setValue(obj);
             }
         });
 
