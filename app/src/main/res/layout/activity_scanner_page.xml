@@ -59,7 +59,6 @@
         android:layout_marginEnd="62dp"
         android:layout_marginBottom="409dp"
         android:enabled="false"
-        android:onClick="check"
         android:text="Verify OTP"
         android:textSize="20dp" />
 

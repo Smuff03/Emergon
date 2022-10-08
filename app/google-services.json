@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "563158743987",
+    "firebase_url": "https://emergon-e0f67-default-rtdb.firebaseio.com",
     "project_id": "emergon-e0f67",
     "storage_bucket": "emergon-e0f67.appspot.com"
   },
@@ -13,6 +14,22 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "563158743987-1mudr21p7v9ekc07tc16qltbrq1fboum.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.emergon",
+            "certificate_hash": "b6f2b6a2cfe5150de83d042114551b4249bec8ce"
+          }
+        },
+        {
+          "client_id": "563158743987-prpe99954eml1s5qrrfi9q9vu2uv1jp8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.emergon",
+            "certificate_hash": "3f892e82d7dc90398131b45008f1a8325e4e8d22"
+          }
+        },
         {
           "client_id": "563158743987-bms7gksibbtuc459a02f8p335b2srrk3.apps.googleusercontent.com",
           "client_type": 3
