@@ -9,21 +9,20 @@
 
     <TextView
         android:id="@+id/text"
-        android:layout_width="206dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_width="200dp"
+        android:layout_height="47dp"
+        android:layout_below="@id/imageButton"
+        android:layout_marginTop="0dp"
         android:layout_marginBottom="20dp"
         android:text="Enter Your Phone No."
-        android:layout_below="@id/imageButton"
         android:textSize="20dp" />
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_below="@id/text"
-        android:layout_height="wrap_content"
         android:id="@+id/gaurdian_name_input"
-        android:hint="Name of the Gaurdian"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text"
+        android:hint="Name of the Gaurdian" />
 
     <EditText
         android:id="@+id/phone"
@@ -74,7 +73,11 @@
         android:id="@+id/imageButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="-4dp"
         android:layout_toEndOf="@+id/text"
         app:srcCompat="@drawable/ic_baseline_qr_code_scanner_24" />
 
