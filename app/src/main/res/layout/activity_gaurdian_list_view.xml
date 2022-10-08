@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".gaurdian_list_view">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gaurdian Names"
+        android:id="@+id/gaurdian_name_txt"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        />
+
+    <ListView
+        android:id="@+id/gaurdian_list_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gaurdian_name_txt"
+        android:background="@color/teal_200" />
+
+</RelativeLayout>

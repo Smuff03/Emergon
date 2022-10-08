@@ -12,6 +12,9 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class patient_new extends AppCompatActivity {
     private EditText un,pass,cpass;
     private CheckBox cb;
@@ -41,6 +44,12 @@ public class patient_new extends AppCompatActivity {
                     editor.putString("patient_name",uname);
                     editor.putString("patient_pass",ps);
                     editor.putString("login","patient");
+                    dataholder obj=new dataholder(uname,ps,"","","","","","","","","");
+
+                    FirebaseDatabase db=FirebaseDatabase.getInstance();
+                    DatabaseReference node= db.getReference(uname);
+
+                    node.child(uname).setValue(obj);
                     editor.apply();
                     Intent intent = new Intent(patient_new.this, patient.class);
                     startActivity(intent);

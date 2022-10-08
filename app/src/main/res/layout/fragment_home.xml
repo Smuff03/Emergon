@@ -169,11 +169,11 @@
         android:ems="10"
         android:hint="E-mail"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNumber"
-        app:layout_constraintStart_toStartOf="@+id/editTextNumber" />
+        app:layout_constraintBottom_toTopOf="@+id/pat_phoneno"
+        app:layout_constraintStart_toStartOf="@+id/pat_phoneno" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/pat_phoneno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="1dp"
@@ -271,5 +271,15 @@
         android:inputType="number"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName9"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <Button
+        android:id="@+id/homeconfirm"
+        android:layout_width="143dp"
+        android:layout_height="37dp"
+        android:text="Confirm details"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,14 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".casefolder">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="#F2F5F6"
+        tools:context=".casefolder">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/Medicine"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/textView2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="30dp"
+            android:width="180dp"
+            android:onClick="openMedicine"
+            android:src="@drawable/ic_baseline_folder_24" />
+        <TextView
+            android:id="@+id/med"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="90dp"
+            android:text="Medicine"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:id="@+id/Cardiology"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/textView2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="30dp"
+            android:width="180dp"
+            android:onClick="openEmergency"
+            android:src="@drawable/ic_baseline_folder_24" />
+
+        <TextView
+            android:id="@+id/cardio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="240dp"
+            android:layout_marginTop="90dp"
+            android:text="Cardiology"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:id="@+id/Skin"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/med"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="150dp"
+            android:width="180dp"
+            android:onClick="openSkin"
+            android:src="@drawable/ic_baseline_folder_24" />
+
+        <TextView
+            android:id="@+id/skin_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="210dp"
+            android:text="skin"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:id="@+id/Neurology"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/textView2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="150dp"
+            android:width="180dp"
+            android:onClick="openNeurology0"
+            android:src="@drawable/ic_baseline_folder_24" />
+
+        <TextView
+            android:id="@+id/neuro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="240dp"
+            android:layout_marginTop="210dp"
+            android:text="Neurology"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+
+
+
+    </FrameLayout>
