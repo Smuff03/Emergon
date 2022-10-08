@@ -16,11 +16,14 @@
         <entry key="..\:/Emergon/app/src/main/res/layout/activity_hospital_new.xml" value="0.23645833333333333" />
         <entry key="..\:/Emergon/app/src/main/res/layout/activity_main.xml" value="0.22239583333333332" />
         <entry key="..\:/Emergon/app/src/main/res/layout/activity_main2.xml" value="0.22239583333333332" />
+        <entry key="..\:/Emergon/app/src/main/res/layout/activity_neurology.xml" value="0.22239583333333332" />
         <entry key="..\:/Emergon/app/src/main/res/layout/activity_patient.xml" value="0.23645833333333333" />
         <entry key="..\:/Emergon/app/src/main/res/layout/activity_patient_new.xml" value="0.264" />
         <entry key="..\:/Emergon/app/src/main/res/layout/activity_physical.xml" value="0.23645833333333333" />
+        <entry key="..\:/Emergon/app/src/main/res/layout/activity_skin.xml" value="0.23645833333333333" />
         <entry key="..\:/Emergon/app/src/main/res/layout/app_bar_patient.xml" value="0.2328125" />
         <entry key="..\:/Emergon/app/src/main/res/layout/content_patient.xml" value="0.23645833333333333" />
+        <entry key="..\:/Emergon/app/src/main/res/layout/fragment_casefolder.xml" value="0.23645833333333333" />
         <entry key="..\:/Emergon/app/src/main/res/layout/fragment_gallery.xml" value="0.2328125" />
         <entry key="..\:/Emergon/app/src/main/res/layout/fragment_home.xml" value="0.4" />
         <entry key="..\:/Emergon/app/src/main/res/layout/fragment_slideshow.xml" value="0.2328125" />
