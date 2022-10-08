@@ -12,36 +12,45 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class hospital_new extends AppCompatActivity {
-    private EditText hname,hreg,pass,cpass;
+    private EditText hos_name,hos_reg,hos_pass,cpass;
     private CheckBox cb;
     private Button b;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hospital_new);
-        hname= findViewById(R.id.editTextTextPersonName4);
-        pass = findViewById(R.id.editTextTextPassword4);
-        hreg = findViewById(R.id.editTextTextPersonName5);
+        hos_name= findViewById(R.id.editTextTextPersonName4);
+        hos_pass = findViewById(R.id.editTextTextPassword4);
+        hos_reg = findViewById(R.id.editTextTextPersonName5);
         cpass = findViewById(R.id.editTextTextPassword5);
         cb = findViewById(R.id.cb4);
         b = findViewById(R.id.button6);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String hname1 = hname.getText().toString();
-                String ps = pass.getText().toString();
+                String hos_name1 = hos_name.getText().toString();
+                String ps = hos_pass.getText().toString();
                 String cps = cpass.getText().toString();
-                String hr = hreg.getText().toString();
-                if(hname1.isEmpty() || ps.isEmpty()|| hr.isEmpty()|| cps.isEmpty()){
+                String hr = hos_reg.getText().toString();
+                if(hos_name1.isEmpty() || ps.isEmpty()|| hr.isEmpty()|| cps.isEmpty()){
                     Toast.makeText(hospital_new.this,"please enter all data",Toast.LENGTH_SHORT).show();
                 }else if(ps.matches(cps)){
                     SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
                     SharedPreferences.Editor editor = preferences.edit();
-                    editor.putString("hospital_name",hname1);
+                    editor.putString("hospital_name",hos_name1);
                     editor.putString("hospital_password",ps);
                     editor.putString("hospital_registration",hr);
                     editor.putString("login","hospital");
+
+                    hospital_dataholder obj=new hospital_dataholder(hos_name1, ps, hr);
+                    FirebaseDatabase db=FirebaseDatabase.getInstance();
+                    DatabaseReference node= db.getReference(hos_name1);
+
+                    node.child(hos_name1).setValue(obj);
                     editor.apply();
                     Intent intent = new Intent(hospital_new.this, hlogin.class);
                     startActivity(intent);

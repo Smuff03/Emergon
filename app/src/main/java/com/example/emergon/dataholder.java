@@ -1,10 +1,11 @@
 package com.example.emergon;
 
+import android.widget.EditText;
+
 public class dataholder {
     String ad,dob,email,un,ps,ph,age,hg,wg,mc,n,bg;
 
-    public dataholder(String Un,String Ps,String N, String Dob, String Email,String Ph,String Age
-            ,String Hg,String Wg,String Bg,String Mc,String Ad) {
+    public dataholder(String Un, String Ps, String N,String Ad, String Dob, String Email, String Ph, String Age, String Hg,String Wg,String Mc) {
         n = N;
         ad = Ad;
         dob = Dob;
