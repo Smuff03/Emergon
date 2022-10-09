@@ -50,7 +50,7 @@ public class hospital_new extends AppCompatActivity {
                     FirebaseDatabase db=FirebaseDatabase.getInstance();
                     DatabaseReference node= db.getReference(hos_name1);
 
-                    node.child(hos_name1).setValue(obj);
+                    node.setValue(obj);
                     editor.apply();
                     Intent intent = new Intent(hospital_new.this, hlogin.class);
                     startActivity(intent);

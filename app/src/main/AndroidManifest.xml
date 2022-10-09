@@ -54,6 +54,7 @@
             android:name=".patient"
             android:exported="false"
             android:label="@string/title_activity_patient"
+            android:logo="@mipmap/emergon_logo"
             android:theme="@style/Theme.Emergon.NoActionBar" />
         <activity
             android:name=".hospital_new"
@@ -64,6 +65,7 @@
             android:name=".hospital_login"
             android:exported="false"
             android:label="Hospital Login"
+
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".patient_new"
