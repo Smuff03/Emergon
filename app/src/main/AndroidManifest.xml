@@ -20,6 +20,9 @@
         android:theme="@style/Theme.Emergon"
         tools:targetApi="31">
         <activity
+            android:name=".hos_scan_res"
+            android:exported="false" />
+        <activity
             android:name=".neurology"
             android:exported="false" />
         <activity
@@ -65,7 +68,6 @@
             android:name=".hospital_login"
             android:exported="false"
             android:label="Hospital Login"
-
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".patient_new"

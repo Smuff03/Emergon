@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -16,8 +18,12 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.emergon.R;
 import com.example.emergon.databinding.FragmentHomeBinding;
 import com.example.emergon.dataholder;
+import com.example.emergon.hos_scan_res;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class HomeFragment extends Fragment {
 
@@ -34,36 +40,128 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         Activity activity = getActivity();
-
+        String N1,Ad1,Db1,Em1,Ph1,Ag1,Hg1,Wg1,Mc1;
         SharedPreferences preferences = activity.getSharedPreferences("checkbox",activity.MODE_PRIVATE);
         String uname = preferences.getString("patient_name","");
         String ps = preferences.getString("patient_pass","");
-        ph = root.findViewById(R.id.pat_phoneno);
+        ph = root.findViewById(R.id.eph);
         homebut = root.findViewById(R.id.homeconfirm);
-        n =  root.findViewById(R.id.editTextTextPersonName7);
-        ad = root.findViewById(R.id.editTextNumber5);
-        dob = root.findViewById(R.id.editTextDate);
-        email = root.findViewById(R.id.editTextTextEmailAddress);
-        ph = root.findViewById(R.id.pat_phoneno);
-        age = root.findViewById(R.id.editTextNumber2);
-        hg = root.findViewById(R.id.editTextNumber3);;
-        wg = root.findViewById(R.id.editTextNumber4);
-        mc = root.findViewById(R.id.editTextTextPersonName9);
-        bg = root.findViewById(R.id.editTextTextPersonName8);
+        n =  root.findViewById(R.id.ename);
+        ad = root.findViewById(R.id.eadh);
+        dob = root.findViewById(R.id.edob);
+        email = root.findViewById(R.id.eemail);
+        ph = root.findViewById(R.id.eph);
+        age = root.findViewById(R.id.eage);
+        hg = root.findViewById(R.id.ehg);;
+        wg = root.findViewById(R.id.ewg);
+        mc = root.findViewById(R.id.emc);
+        bg = root.findViewById(R.id.ebg);
+        N1 = res(uname,"n");
+        Db1 = res(uname,"dod");
+        Em1 = res(uname,"email");
+        Ph1 = res(uname,"ph");
+        Ag1 = res(uname,"age");
+        Hg1 = res(uname,"hg");
+        Wg1 = res(uname,"wg");
+//        bg = res(uname,"");
+        Mc1 = res(uname,"mc");
+        Ad1 = res(uname,"ad");
 
         homebut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dataholder obj=new dataholder(uname,ps,n.getText().toString(),ad.getText().toString(),dob.getText().toString(),email.getText().toString(),ph.getText().toString(),age.getText().toString(),hg.getText().toString(),wg.getText().toString(),mc.getText().toString());
-                FirebaseDatabase db=FirebaseDatabase.getInstance();
-                DatabaseReference node= db.getReference(uname);
+                Activity activity = getActivity();
+                String N = n.getText().toString();
+                String Ad = ad.getText().toString();
+                String Dob = dob.getText().toString();
+                String Email = email.getText().toString();
+                String Ph = ph.getText().toString();
+                String Age = age.getText().toString();
+                String Hg = hg.getText().toString();
+                String Wg = wg.getText().toString();
+                String Mc = mc.getText().toString();
+                if(N.isEmpty()||Ad.isEmpty()||Dob.isEmpty()||Email.isEmpty()||Ph.isEmpty()||Age.isEmpty()||Hg.isEmpty()||
+                Wg.isEmpty()||Mc.isEmpty()){
+                    Toast.makeText(activity,"please enter all data",Toast.LENGTH_SHORT).show();
+                }else{
+                    dataholder obj=new dataholder(uname,ps,n.getText().toString(),ad.getText().toString(),dob.getText().toString(),email.getText().toString(),ph.getText().toString(),age.getText().toString(),hg.getText().toString(),wg.getText().toString(),mc.getText().toString());
+                    FirebaseDatabase db=FirebaseDatabase.getInstance();
+                    DatabaseReference node= db.getReference(uname);
+                    node.setValue(obj);
+                    Toast.makeText(activity,"Data saved",Toast.LENGTH_SHORT).show();
+                    SharedPreferences preferences = activity.getSharedPreferences("checkbox",activity.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("ph",Ph);
+                    editor.putString("n",N);
+                    editor.putString("ad",Ad);
+                    editor.putString("dob",Dob);
+                    editor.putString("email",Email);
+                    editor.putString("age",Age);
+                    editor.putString("hg",Hg);
+                    editor.putString("wg",Wg);
+                    editor.putString("mc",Mc);
 
-                node.child(uname).setValue(obj);
+                    editor.apply();
+                }
             }
         });
 
         return root;
     }
+    public String res(String u,String p){
+        String result;
+        Activity activity = getActivity();
+        FirebaseDatabase db=FirebaseDatabase.getInstance();
+        DatabaseReference node= db.getReference("/"+u+"/"+p);
+        SharedPreferences preferences = activity.getSharedPreferences("checkbox",activity.MODE_PRIVATE);
+        node.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String value = snapshot.getValue(String.class);
+                switch (p){
+                    case "n":
+                        n.setText(value, TextView.BufferType.EDITABLE);
+                        break;
+                    case "dod":
+                        dob.setText(value, TextView.BufferType.EDITABLE);
+                        break;
+                    case "email":
+                        email.setText(value, TextView.BufferType.EDITABLE);
+                        break;
+                    case "ph":
+                        ph.setText(value, TextView.BufferType.EDITABLE);
+                        break;
+                    case "age":
+                        age.setText(value, TextView.BufferType.EDITABLE);
+                        break;
+                    case "hg":
+                        hg.setText(value, TextView.BufferType.EDITABLE);
+                        break;
+                    case "wg":
+                        wg.setText(value, TextView.BufferType.EDITABLE);
+                        break;
+                    case "mc":
+                        mc.setText(value, TextView.BufferType.EDITABLE);
+                        break;
+                    case "ad":
+                        ad.setText(value, TextView.BufferType.EDITABLE);
+                        break;
+                    default:
+                        ad.setText("this is default", TextView.BufferType.EDITABLE);
+                        break;
+
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+                Toast.makeText(activity,"Not Found",Toast.LENGTH_SHORT).show();
+            }
+        });
+        result = preferences.getString("temp","");
+        return result;
+    }
+
 
     @Override
     public void onDestroyView() {

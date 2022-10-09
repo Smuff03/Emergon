@@ -16,5 +16,9 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_baseline_man_24"
             android:title="@string/menu_slideshow" />
+        <item
+            android:id="@+id/nav_gene"
+            android:icon="@drawable/ic_baseline_man_24"
+            android:title="Generate QR" />
     </group>
 </menu>
