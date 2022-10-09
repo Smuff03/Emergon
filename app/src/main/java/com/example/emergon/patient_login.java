@@ -3,6 +3,7 @@ package com.example.emergon;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ public class patient_login extends AppCompatActivity {
     private EditText un,pass;
     private CheckBox cb;
     private Button b;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +32,7 @@ public class patient_login extends AppCompatActivity {
         un= findViewById(R.id.Username);
         pass = findViewById(R.id.Password);
         cb = findViewById(R.id.cb2);
+
 
         b = findViewById(R.id.button3);
         b.setOnClickListener(new View.OnClickListener() {
