@@ -25,9 +25,9 @@ public class gaurdian_list_view extends AppCompatActivity {
         names = new ArrayList<>();
 
         // he khalcha hyane modify kara list madhe items add karayla
-        names.add("chutiya");
+        names.add("Sam");
 
-        names.add("bsdk");
+        names.add("Jay");
 
         gaurdian_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
