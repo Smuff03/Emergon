@@ -29,6 +29,11 @@ public class patient_new extends AppCompatActivity {
         cb = findViewById(R.id.cb1);
         b = findViewById(R.id.button5);
 
+        String upperCaseChars = "(.*[A-Z].*)";
+        String lowerCaseChars = "(.*[a-z].*)";
+        String numbers = "(.*[0-9].*)";
+        String specialChars = "(.*[@,#,$,%].*$)";
+
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,6 +43,22 @@ public class patient_new extends AppCompatActivity {
 
                 if(uname.isEmpty() || ps.isEmpty()){
                     Toast.makeText(patient_new.this,"please enter all data",Toast.LENGTH_SHORT).show();
+                }else if (ps.length() > 15 || ps.length() < 8)
+                {
+                    makeToast("Password must me within 8 - 15 char");
+                }
+                else if (!ps.matches(upperCaseChars ))
+                {
+                    makeToast("Password must consist one capital letter");
+                } else if (!ps.matches(lowerCaseChars ))
+                {
+                    makeToast("Passwor must contain lower cases");
+                } else if (!ps.matches(numbers ))
+                {
+                    makeToast("Password must consist some numerical");
+                } else if (!ps.matches(specialChars ))
+                {
+                    makeToast("Password must contain some special character");
                 }else if(ps.matches(cps)){
                     SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
                     SharedPreferences.Editor editor = preferences.edit();
@@ -60,6 +81,7 @@ public class patient_new extends AppCompatActivity {
 
             }
         });
+
         cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -80,6 +102,11 @@ public class patient_new extends AppCompatActivity {
                 }
             }
         });
+    }
+    Toast msg;
+    private void makeToast(String s) {
+        if ( msg != null) msg.cancel();
+        Toast.makeText(getApplicationContext(),s, Toast.LENGTH_SHORT).show();
     }
 
 }
