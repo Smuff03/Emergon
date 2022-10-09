@@ -1,5 +1,6 @@
 package com.example.emergon;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,6 +12,12 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class patient_login extends AppCompatActivity {
     private EditText un,pass;
@@ -30,14 +37,39 @@ public class patient_login extends AppCompatActivity {
             public void onClick(View view) {
                 String uname = un.getText().toString();
                 String ps = pass.getText().toString();
+                String upperCaseChars = "(.*[A-Z].*)";
+                String lowerCaseChars = "(.*[a-z].*)";
+                String numbers = "(.*[0-9].*)";
+                String specialChars = "(.*[@,#,$,%].*$)";
+                FirebaseDatabase db=FirebaseDatabase.getInstance();
+                DatabaseReference node= db.getReference("/"+uname+"/ps");
 
+                node.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String value = snapshot.getValue(String.class);
+                        SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.putString("temp",value);
+                        editor.apply();
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Toast.makeText(patient_login.this,"Not Found",Toast.LENGTH_SHORT).show();
+                    }
+                });
+                SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
+                String value = preferences.getString("temp","");
                 if(uname.isEmpty() || ps.isEmpty()){
                     Toast.makeText(patient_login.this,"please enter all data",Toast.LENGTH_SHORT).show();
-                } else if(ps != "Test@123" && uname != "admin"){
-                    makeToast("Enter correct Details");
+//
+                } else if(!ps.equals(value)){
+
+                    Toast.makeText(patient_login.this,"TRY AGAIN",Toast.LENGTH_SHORT).show();
+
                 }
                 else{
-                    SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
+//                    SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
                     SharedPreferences.Editor editor = preferences.edit();
                     editor.putString("patient_name",uname);
                     editor.putString("patient_password",ps);
@@ -85,7 +117,7 @@ public class patient_login extends AppCompatActivity {
     Toast msg;
     private void makeToast(String s){
            if ( msg != null) msg.cancel();
-           Toast.makeText(getApplicationContext(),s, Toast.LENGTH_SHORT).show();
+            msg = Toast.makeText(getApplicationContext(),s, Toast.LENGTH_SHORT);
     }
     public boolean isValidPassword(String password)
     {

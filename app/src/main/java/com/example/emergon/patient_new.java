@@ -70,7 +70,7 @@ public class patient_new extends AppCompatActivity {
                     FirebaseDatabase db=FirebaseDatabase.getInstance();
                     DatabaseReference node= db.getReference(uname);
 
-                    node.child(uname).setValue(obj);
+                    node.setValue(obj);
                     editor.apply();
                     Intent intent = new Intent(patient_new.this, patient.class);
                     startActivity(intent);

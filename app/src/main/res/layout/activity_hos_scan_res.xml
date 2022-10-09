@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".hos_scan_res">
 
     <TextView
-        android:id="@+id/tm"
+        android:id="@+id/tmc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -16,10 +16,10 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/th" />
+        app:layout_constraintTop_toBottomOf="@+id/thg" />
 
     <TextView
-        android:id="@+id/tadh"
+        android:id="@+id/tadhr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -28,10 +28,10 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/th" />
+        app:layout_constraintTop_toBottomOf="@+id/thg" />
 
     <TextView
-        android:id="@+id/tad"
+        android:id="@+id/tadd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
@@ -40,10 +40,10 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/th" />
+        app:layout_constraintTop_toBottomOf="@+id/thg" />
 
     <TextView
-        android:id="@+id/tb"
+        android:id="@+id/tbg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
@@ -52,10 +52,10 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/th" />
+        app:layout_constraintTop_toBottomOf="@+id/thg" />
 
     <TextView
-        android:id="@+id/tn"
+        android:id="@+id/tname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
@@ -67,7 +67,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/td"
+        android:id="@+id/tdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
@@ -79,7 +79,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/te"
+        android:id="@+id/tem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
@@ -88,10 +88,10 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/td" />
+        app:layout_constraintTop_toBottomOf="@+id/tdate" />
 
     <TextView
-        android:id="@+id/tp"
+        android:id="@+id/tpho"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
@@ -100,10 +100,10 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/te" />
+        app:layout_constraintTop_toBottomOf="@+id/tem" />
 
     <TextView
-        android:id="@+id/ta"
+        android:id="@+id/tage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
@@ -112,10 +112,10 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tp" />
+        app:layout_constraintTop_toBottomOf="@+id/tpho" />
 
     <TextView
-        android:id="@+id/th"
+        android:id="@+id/thg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
@@ -124,10 +124,10 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ta" />
+        app:layout_constraintTop_toBottomOf="@+id/tage" />
 
     <TextView
-        android:id="@+id/tw"
+        android:id="@+id/twg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
@@ -136,10 +136,10 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/th" />
+        app:layout_constraintTop_toBottomOf="@+id/thg" />
 
     <EditText
-        android:id="@+id/ename"
+        android:id="@+id/en"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
@@ -147,33 +147,33 @@
         android:ems="10"
         android:hint="Full Name"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/edob"
+        app:layout_constraintStart_toStartOf="@+id/edate"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edob"
+        android:id="@+id/edate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:ems="10"
         android:hint="Date"
         android:inputType="date"
-        app:layout_constraintBottom_toTopOf="@+id/eemail"
-        app:layout_constraintStart_toStartOf="@+id/eemail" />
+        app:layout_constraintBottom_toTopOf="@+id/eem"
+        app:layout_constraintStart_toStartOf="@+id/eem" />
 
     <EditText
-        android:id="@+id/eemail"
+        android:id="@+id/eem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="9dp"
         android:ems="10"
         android:hint="E-mail"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/eph"
-        app:layout_constraintStart_toStartOf="@+id/eph" />
+        app:layout_constraintBottom_toTopOf="@+id/epho"
+        app:layout_constraintStart_toStartOf="@+id/epho" />
 
     <EditText
-        android:id="@+id/eph"
+        android:id="@+id/epho"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="1dp"
@@ -181,87 +181,87 @@
         android:ems="10"
         android:hint="Your contact number"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/eage"
-        app:layout_constraintEnd_toEndOf="@+id/eage" />
+        app:layout_constraintBottom_toTopOf="@+id/eag"
+        app:layout_constraintEnd_toEndOf="@+id/eag" />
 
     <EditText
-        android:id="@+id/eage"
+        android:id="@+id/eag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="23dp"
         android:layout_marginTop="17dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/tp"
-        app:layout_constraintTop_toBottomOf="@+id/tp" />
+        app:layout_constraintStart_toEndOf="@+id/tpho"
+        app:layout_constraintTop_toBottomOf="@+id/tpho" />
 
     <EditText
-        android:id="@+id/ehg"
+        android:id="@+id/eh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="1dp"
         android:ems="10"
         android:hint="in cm"
         android:inputType="number"
-        app:layout_constraintEnd_toEndOf="@+id/eage"
-        app:layout_constraintTop_toBottomOf="@+id/eage" />
+        app:layout_constraintEnd_toEndOf="@+id/eag"
+        app:layout_constraintTop_toBottomOf="@+id/eag" />
 
     <EditText
-        android:id="@+id/ewg"
+        android:id="@+id/ew"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="in kg"
         android:inputType="number"
-        app:layout_constraintStart_toStartOf="@+id/ehg"
-        app:layout_constraintTop_toBottomOf="@+id/ehg" />
+        app:layout_constraintStart_toStartOf="@+id/eh"
+        app:layout_constraintTop_toBottomOf="@+id/eh" />
 
     <EditText
-        android:id="@+id/ebg"
+        android:id="@+id/eb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:ems="10"
         android:hint="Blood Group"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/ewg"
-        app:layout_constraintTop_toBottomOf="@+id/ewg" />
+        app:layout_constraintStart_toStartOf="@+id/ew"
+        app:layout_constraintTop_toBottomOf="@+id/ew" />
 
     <EditText
-        android:id="@+id/ead"
+        android:id="@+id/eadd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        app:layout_constraintStart_toStartOf="@+id/ebg"
-        app:layout_constraintTop_toBottomOf="@+id/ebg" />
+        app:layout_constraintStart_toStartOf="@+id/eb"
+        app:layout_constraintTop_toBottomOf="@+id/eb" />
 
     <EditText
-        android:id="@+id/emc"
+        android:id="@+id/emcm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Mediclain No."
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/ead"
-        app:layout_constraintTop_toBottomOf="@+id/ead" />
+        app:layout_constraintStart_toStartOf="@+id/eadd"
+        app:layout_constraintTop_toBottomOf="@+id/eadd" />
 
     <TextView
-        android:id="@+id/tk"
+        android:id="@+id/tkk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="31dp"
         android:layout_marginTop="14dp"
         android:text="If you don't have mediclaim, type &quot;No&quot;."
-        app:layout_constraintStart_toStartOf="@+id/tm"
-        app:layout_constraintTop_toBottomOf="@+id/emc" />
+        app:layout_constraintStart_toStartOf="@+id/tmc"
+        app:layout_constraintTop_toBottomOf="@+id/emcm" />
 
     <EditText
-        android:id="@+id/eadh"
+        android:id="@+id/eadhh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
@@ -269,17 +269,7 @@
         android:ems="10"
         android:hint="Aadhar card Number"
         android:inputType="number"
-        app:layout_constraintStart_toStartOf="@+id/emc"
-        app:layout_constraintTop_toBottomOf="@+id/tk" />
-
-    <Button
-        android:id="@+id/homeconfirm"
-        android:layout_width="143dp"
-        android:layout_height="37dp"
-        android:text="Confirm details"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eadh" />
+        app:layout_constraintStart_toStartOf="@+id/emcm"
+        app:layout_constraintTop_toBottomOf="@+id/tkk" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
