@@ -44,7 +44,7 @@ import java.util.concurrent.TimeUnit;
 public class gene extends Fragment {
     private FragmentGeneBinding binding;
     ImageView iv;
-    Button b;
+    Button b,gq;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -55,6 +55,7 @@ public class gene extends Fragment {
         Activity activity = getActivity();
         iv = root.findViewById(R.id.ivp);
         b = root.findViewById(R.id.gene);
+        gq = root.findViewById(R.id.gqr);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,9 +65,15 @@ public class gene extends Fragment {
                 q.qrgen(iv,s);
             }
         });
-
-
-
+        gq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                QR q = new QR();
+                SharedPreferences preferences = activity.getSharedPreferences("checkbox",activity.MODE_PRIVATE);
+                String s = preferences.getString("ph","");
+                q.qrgen(iv,s);
+            }
+        });
         return root;
     }
 }
