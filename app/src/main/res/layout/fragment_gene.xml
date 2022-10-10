@@ -22,10 +22,22 @@
         android:id="@+id/ivp"
         android:layout_width="330dp"
         android:layout_height="340dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="140dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gene" />
+
+    <Button
+        android:id="@+id/gqr"
+        android:layout_width="247dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="36dp"
+        android:text="generate a QR for Guardian"
+        app:layout_constraintBottom_toTopOf="@+id/ivp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gene"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

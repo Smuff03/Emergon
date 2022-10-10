@@ -24,14 +24,18 @@
             android:exported="false" />
         <activity
             android:name=".neurology"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Neurology"
+            android:parentActivityName=".casefolder"/>
         <activity
             android:name=".skin"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Dermatology"
+            android:parentActivityName=".casefolder"/>
         <activity
             android:name=".emergency"
             android:exported="false"
-            android:label="Emergency"
+            android:label="Cardiology"
             android:parentActivityName=".casefolder" />
         <activity
             android:name=".medicine"
@@ -40,7 +44,9 @@
             android:parentActivityName=".casefolder" />
         <activity
             android:name=".gaurdian_list_view"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Neurologyy"
+            android:parentActivityName=".casefolder" />
         <activity
             android:name=".Scanner_page"
             android:exported="false" />
