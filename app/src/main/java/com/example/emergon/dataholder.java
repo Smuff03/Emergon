@@ -18,7 +18,7 @@ public class dataholder {
         hg = Hg ;
         wg = Wg;
         mc = Mc;
-        bg = bg;
+        bg = Bg;
     }
 
     public String getAd() {
