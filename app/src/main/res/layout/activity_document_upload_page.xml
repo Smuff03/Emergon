@@ -16,9 +16,9 @@
         android:textSize="25sp" />
 
     <ImageView
+        android:id="@+id/view_selected_document_window"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/view_selected_document_window"
         android:layout_above="@id/document_selection_btn"
         android:layout_below="@id/folder_selector"
         android:layout_marginTop="20dp"
