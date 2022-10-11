@@ -47,13 +47,12 @@ public class Document_upload_page extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_document_upload_page);
+        setContentView(R.layout.activity_skin);
 
 
-        input=(EditText)findViewById(R.id.document_name_edit_txt);
-        viewSelectedDocument=(ImageView)findViewById(R.id.view_selected_document_window);
+        viewSelectedDocument=(ImageView)findViewById(R.id.skin_image_view);
 
-        selectDocumentToUploadBtn=(Button)findViewById(R.id.document_selection_btn);
+        selectDocumentToUploadBtn=(Button)findViewById(R.id.skin_select_btn);
         selectDocumentToUploadBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,7 +78,7 @@ public class Document_upload_page extends AppCompatActivity {
             }
         });
 
-        uploadSelectedImageBtn=(Button)findViewById(R.id.document_upload_btn);
+        uploadSelectedImageBtn=(Button)findViewById(R.id.skin_upload_btn);
         uploadSelectedImageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,7 +97,7 @@ public class Document_upload_page extends AppCompatActivity {
         dialog.setTitle("File Upload Progress");
         dialog.show();
         FirebaseStorage storage = FirebaseStorage.getInstance();
-        StorageReference uploader = storage.getReference().child(uname+"_medicine");
+        StorageReference uploader = storage.getReference().child(uname+"_skin");
         FirebaseDatabase db = FirebaseDatabase.getInstance();
 //        SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
 //        String uname = preferences.getString("patient_name","");
@@ -108,7 +107,7 @@ public class Document_upload_page extends AppCompatActivity {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 dialog.dismiss();
-                node.child("ig1").setValue("gs://emergon-e0f67.appspot.com/"+uname+"_medicine");
+                node.child("ig2").setValue("gs://emergon-e0f67.appspot.com/"+uname+"_medicine");
                 Toast.makeText(getApplicationContext(),"File uploaded ",Toast.LENGTH_SHORT).show();
             }
         }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
