@@ -12,6 +12,7 @@
         android:id="@+id/app_bar_patient"
         layout="@layout/app_bar_patient"
         android:layout_width="match_parent"
+        android:background="@drawable/background"
         android:layout_height="match_parent" />
 
     <com.google.android.material.navigation.NavigationView
@@ -21,5 +22,6 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_patient"
+        android:background="@drawable/background1"
         app:menu="@menu/activity_main_drawer" />
 </androidx.drawerlayout.widget.DrawerLayout>

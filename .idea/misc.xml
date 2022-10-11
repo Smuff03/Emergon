@@ -30,21 +30,26 @@
         <entry key="..\:/Emergon/app/src/main/res/menu/activity_main_drawer.xml" value="0.264" />
         <entry key="..\:/Emergon/app/src/main/res/menu/main.xml" value="0.1" />
         <entry key="..\:/Emergon/app/src/main/res/menu/patient.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Emergon/app/src/main/res/drawable/background.xml" value="0.1295" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Emergon/app/src/main/res/drawable/background1.xml" value="0.1295" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Emergon/app/src/main/res/drawable/ic_baseline_folder_copy_24.xml" value="0.1295" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Emergon/app/src/main/res/drawable/shadesgrey.xml" value="0.1295" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Emergon/app/src/main/res/layout/activity_addhar_verfi_page.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Emergon/app/src/main/res/layout/activity_bio.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Emergon/app/src/main/res/layout/activity_gaurdian_list_view.xml" value="0.25" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Emergon/app/src/main/res/layout/activity_hlogin.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Emergon/app/src/main/res/layout/activity_hlogin.xml" value="0.12" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Emergon/app/src/main/res/layout/activity_hos_scan_res.xml" value="0.2" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Emergon/app/src/main/res/layout/activity_patient.xml" value="0.10778985507246377" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Emergon/app/src/main/res/layout/activity_patient.xml" value="0.14" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Emergon/app/src/main/res/layout/activity_patient_new.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Emergon/app/src/main/res/layout/activity_scanner_page.xml" value="0.22" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Emergon/app/src/main/res/layout/app_bar_patient.xml" value="0.21" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Emergon/app/src/main/res/layout/content_patient.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Emergon/app/src/main/res/layout/fragment_casefolder.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Emergon/app/src/main/res/layout/fragment_gallery.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Emergon/app/src/main/res/layout/fragment_gene.xml" value="0.18645833333333334" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Emergon/app/src/main/res/layout/fragment_home.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Emergon/app/src/main/res/layout/fragment_slideshow.xml" value="0.25" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Emergon/app/src/main/res/layout/nav_header_patient.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Emergon/app/src/main/res/layout/nav_header_patient.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Emergon/app/src/main/res/layout/patient_login.xml" value="0.10778985507246377" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Emergon/app/src/main/res/menu/activity_main_drawer.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_hospital_new.xml" value="0.34270833333333334" />
