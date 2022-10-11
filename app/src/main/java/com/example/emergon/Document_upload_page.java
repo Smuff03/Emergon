@@ -19,6 +19,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -94,10 +96,14 @@ public class Document_upload_page extends AppCompatActivity {
         dialog.show();
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference uploader = storage.getReference().child(name);
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference node = db.getReference("Jayesh");
+
         uploader.putFile(Filepath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 dialog.dismiss();
+                node.child("hg").setValue(Filepath);
                 Toast.makeText(getApplicationContext(),"File uploaded ",Toast.LENGTH_SHORT).show();
             }
         }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
