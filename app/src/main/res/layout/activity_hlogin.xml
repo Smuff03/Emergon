@@ -3,29 +3,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/shadesgrey"
     tools:context=".hlogin">
 
     <TextView
+        android:id="@+id/Hlogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/Hlogin"
-        android:text="Select the method of authentication"
-        android:textSize="30sp"
-        android:textAlignment="center"
         android:layout_marginTop="150dp"
+        android:text="Select the method of authentication"
+        android:textAlignment="center"
         android:textFontWeight="@integer/material_motion_duration_medium_2"
+        android:textSize="30sp"
+        android:textColor="@color/awhite"
         tools:targetApi="p" />
+
     <Button
+        android:id="@+id/Scanner_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/Hlogin"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:textAlignment="center"
-        android:text="QR Scanner"
         android:width="200dp"
-        android:id="@+id/Scanner_btn"
-        />
+        android:text="QR Scanner"
+        android:textAlignment="center"
+        android:textColor="@android:color/black" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -36,5 +39,6 @@
         android:layout_marginTop="50dp"
         android:textAlignment="center"
         android:text="Addhar no."
+        android:textColor="@android:color/black"
         />
 </RelativeLayout>

@@ -24,10 +24,11 @@ public class gaurdian_list_view extends AppCompatActivity {
         gaurdian_list = findViewById(R.id.gaurdian_list_container);
         names = new ArrayList<>();
 
-        // he khalcha hyane modify kara list madhe items add karayla
-        names.add("chutiya");
 
-        names.add("bsdk");
+        // he khalcha hyane modify kara list madhe items add karayla
+//        names.add("chutiya");
+//
+//        names.add("bsdk");
 
         gaurdian_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
