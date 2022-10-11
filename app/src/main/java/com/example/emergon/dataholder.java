@@ -1,11 +1,12 @@
 package com.example.emergon;
 
+import android.renderscript.Matrix4f;
 import android.widget.EditText;
 
 public class dataholder {
     String ad,dob,email,un,ps,ph,age,hg,wg,mc,n,bg;
 
-    public dataholder(String Un, String Ps, String N,String Ad, String Dob, String Email, String Ph, String Age, String Hg,String Wg,String Mc) {
+    public dataholder(String Un, String Ps, String N, String Ad, String Dob, String Email, String Ph, String Age, String Hg, String Wg, String Mc, String Bg) {
         n = N;
         ad = Ad;
         dob = Dob;
@@ -17,6 +18,7 @@ public class dataholder {
         hg = Hg ;
         wg = Wg;
         mc = Mc;
+        bg = Bg;
     }
 
     public String getAd() {
