@@ -66,11 +66,12 @@ public class patient_new extends AppCompatActivity {
                     editor.putString("patient_pass",ps);
                     editor.putString("login","patient");
                     dataholder obj=new dataholder(uname,ps,"","","","","","","","","","");
-
+                    Image_dataholder obj1 = new Image_dataholder("","","","");
                     FirebaseDatabase db=FirebaseDatabase.getInstance();
                     DatabaseReference node= db.getReference(uname);
-
+                    DatabaseReference inode= db.getReference("images"+uname);
                     node.setValue(obj);
+                    inode.setValue(obj1);
                     editor.apply();
                     Intent intent = new Intent(patient_new.this, patient.class);
                     startActivity(intent);

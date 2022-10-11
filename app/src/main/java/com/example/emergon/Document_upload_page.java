@@ -8,6 +8,7 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -91,19 +92,23 @@ public class Document_upload_page extends AppCompatActivity {
     private void uploadtofirebase() {
         //upload percent wagera hya khalcha dialogbox madhe distat
         ProgressDialog dialog = new ProgressDialog(this);
-        String name=input.getText().toString();
+//        String name=input.getText().toString();
+        SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
+        String uname = preferences.getString("patient_name","");
         dialog.setTitle("File Upload Progress");
         dialog.show();
         FirebaseStorage storage = FirebaseStorage.getInstance();
-        StorageReference uploader = storage.getReference().child(name);
+        StorageReference uploader = storage.getReference().child(uname+"_medicine");
         FirebaseDatabase db = FirebaseDatabase.getInstance();
-        DatabaseReference node = db.getReference("Jayesh");
+//        SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
+//        String uname = preferences.getString("patient_name","");
+        DatabaseReference node = db.getReference("images"+uname);
 
         uploader.putFile(Filepath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 dialog.dismiss();
-                node.child("hg").setValue(Filepath);
+                node.child("ig1").setValue("gs://emergon-e0f67.appspot.com/"+uname+"_medicine");
                 Toast.makeText(getApplicationContext(),"File uploaded ",Toast.LENGTH_SHORT).show();
             }
         }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {

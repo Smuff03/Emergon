@@ -41,7 +41,7 @@ import java.util.concurrent.TimeUnit;
 
 public class SlideshowFragment extends Fragment {
     private FragmentSlideshowBinding binding;
-    EditText phone, otp;
+    EditText phone, otp,gp;
     Button btngenOTP, btnverify,vg;
     ImageButton ib;
     FirebaseAuth mAuth;
@@ -64,6 +64,7 @@ public class SlideshowFragment extends Fragment {
         vg = root.findViewById(R.id.viewg);
         mAuth = FirebaseAuth.getInstance();
         bar = root.findViewById(R.id.bar);
+        gp = root.findViewById(R.id.gaurdian_name_input);
         Activity activity = getActivity();
         vg.setOnClickListener(new View.OnClickListener() {
             @Override

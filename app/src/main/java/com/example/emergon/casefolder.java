@@ -58,7 +58,7 @@ public class casefolder extends Fragment {
             @Override
             public void onClick(View v)
             {
-                startActivity(new Intent(activity , Document_upload_page.class));
+                startActivity(new Intent(activity , medicine.class));
             }
         });
         iv2.setOnClickListener(new View.OnClickListener() {
