@@ -44,43 +44,39 @@ public class patient_login extends AppCompatActivity {
                 String lowerCaseChars = "(.*[a-z].*)";
                 String numbers = "(.*[0-9].*)";
                 String specialChars = "(.*[@,#,$,%].*$)";
-                FirebaseDatabase db=FirebaseDatabase.getInstance();
-                DatabaseReference node= db.getReference("/"+uname+"/ps");
-
-                node.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String value = snapshot.getValue(String.class);
-                        SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
-                        SharedPreferences.Editor editor = preferences.edit();
-                        editor.putString("temp",value);
-                        editor.apply();
-                    }
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        Toast.makeText(patient_login.this,"Not Found",Toast.LENGTH_SHORT).show();
-                    }
-                });
                 SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
                 String value = preferences.getString("temp","");
                 if(uname.isEmpty() || ps.isEmpty()){
                     Toast.makeText(patient_login.this,"please enter all data",Toast.LENGTH_SHORT).show();
-//
-                } else if(!ps.equals(value)){
 
-                    Toast.makeText(patient_login.this,"TRY AGAIN",Toast.LENGTH_SHORT).show();
-
-                }
+               }
                 else{
-//                    SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
-                    SharedPreferences.Editor editor = preferences.edit();
-                    editor.putString("patient_name",uname);
-                    editor.putString("patient_password",ps);
-                    editor.putString("login","patient");
-                    editor.apply();
-                    Intent intent = new Intent(patient_login.this, patient.class);
-                    startActivity(intent);
+                    FirebaseDatabase db=FirebaseDatabase.getInstance();
+                    DatabaseReference node= db.getReference("/"+uname+"/ps");
 
+                    node.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            String value = snapshot.getValue(String.class);
+                            if(ps.equals(value)){
+
+                                SharedPreferences.Editor editor = preferences.edit();
+                                editor.putString("patient_name",uname);
+                                editor.putString("patient_password",ps);
+                                editor.putString("login","patient");
+                                editor.apply();
+                                Intent intent = new Intent(patient_login.this, patient.class);
+                                startActivity(intent);
+                            }
+                            else{
+                                Toast.makeText(patient_login.this,"Incorrect Password",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            Toast.makeText(patient_login.this,"Not Found",Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 }
 
             }

@@ -4,9 +4,9 @@ import android.renderscript.Matrix4f;
 import android.widget.EditText;
 
 public class dataholder {
-    String ad,dob,email,un,ps,ph,age,hg,wg,mc,n,bg;
+    String ad,dob,email,un,ps,ph,age,hg,wg,mc,n,bg,add;
 
-    public dataholder(String Un, String Ps, String N, String Ad, String Dob, String Email, String Ph, String Age, String Hg, String Wg, String Mc, String Bg) {
+    public dataholder(String Un, String Ps, String N, String Ad, String Dob, String Email, String Ph, String Age, String Hg, String Wg, String Mc, String Bg, String Add) {
         n = N;
         ad = Ad;
         dob = Dob;
@@ -19,6 +19,7 @@ public class dataholder {
         wg = Wg;
         mc = Mc;
         bg = Bg;
+        add = Add;
     }
 
     public String getAd() {
@@ -105,4 +106,12 @@ public class dataholder {
     public void setBg(String Bg) {
         bg = Bg;
     }
+    public String getAdd() {
+        return add;
+    }
+
+    public void setAdd(String Add) {
+        add = Add;
+    }
+
 }

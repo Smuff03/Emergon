@@ -49,7 +49,6 @@ public class medicine extends AppCompatActivity {
         setContentView(R.layout.activity_medicine);
 
 
-        input=(EditText)findViewById(R.id.document_name_edit_txt1);
         viewSelectedDocument=(ImageView)findViewById(R.id.view_selected_document_window1);
 
         selectDocumentToUploadBtn=(Button)findViewById(R.id.document_selection_btn1);
