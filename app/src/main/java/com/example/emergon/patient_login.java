@@ -53,6 +53,22 @@ public class patient_login extends AppCompatActivity {
                 else{
                     FirebaseDatabase db=FirebaseDatabase.getInstance();
                     DatabaseReference node= db.getReference("/"+uname+"/ps");
+                    DatabaseReference node1= db.getReference("/"+uname+"/gno");
+                    node1.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            String value = snapshot.getValue(String.class);
+                            SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
+                            SharedPreferences.Editor editor = preferences.edit();
+                            editor.putString("gno",value);
+                            editor.apply();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
 
                     node.addValueEventListener(new ValueEventListener() {
                         @Override
