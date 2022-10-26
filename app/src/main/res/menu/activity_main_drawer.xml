@@ -20,5 +20,9 @@
             android:id="@+id/nav_gene"
             android:icon="@drawable/ic_baseline_man_24"
             android:title="Generate QR" />
+        <item
+            android:id="@+id/nav_vpress"
+            android:icon="@drawable/ic_baseline_man_24"
+            android:title="Prescriptions" />
     </group>
 </menu>

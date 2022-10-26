@@ -22,9 +22,16 @@
         android:name="com.example.emergon.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+
     <fragment
         android:id="@+id/nav_gene"
         android:name="com.example.emergon.gene"
         android:label="Generate QR"
         tools:layout="@layout/fragment_gene" />
+
+    <fragment
+        android:id="@+id/nav_vpress"
+        android:name="com.example.emergon.viewpres"
+        android:label="Prescriptions"
+        tools:layout="@layout/fragment_viewpres" />
 </navigation>
