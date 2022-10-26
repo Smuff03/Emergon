@@ -1,45 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="20dp"
     tools:context=".medicine">
 
     <TextView
         android:id="@+id/title_txt1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Document Upload"
+        android:text="Medicine Folder Upload"
         android:textAlignment="center"
-        android:textSize="25sp" />
+        android:textSize="20dp" />
 
     <ImageView
         android:id="@+id/view_selected_document_window1"
-        android:layout_width="399dp"
-        android:layout_height="525dp"
-        android:layout_above="@id/document_selection_btn1"
-        android:layout_below="@id/folder_selector1"
-        tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="71dp" />
-
-    <EditText
-        android:id="@+id/document_name_edit_txt1"
-        android:layout_width="187dp"
-        android:layout_height="23dp"
-        android:layout_below="@id/title_txt1"
-        android:hint="File Name"
-        tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="48dp" />
-
-    <Spinner
-        android:id="@+id/folder_selector1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@id/document_selection_btn1"
         android:layout_below="@id/title_txt1"
-        android:layout_toEndOf="@id/document_name_edit_txt1"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="34dp" />
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp" />
+
 
     <Button
         android:id="@+id/document_selection_btn1"
@@ -47,11 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:width="150dp"
-        android:text="Document Selection"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/document_upload_btn1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_selected_document_window1" />
+        android:text="Document Selection" />
 
     <Button
         android:id="@+id/document_upload_btn1"
@@ -59,13 +39,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="32dp"
         android:width="150dp"
         android:text="Document Upload"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.865"
         app:layout_constraintStart_toStartOf="parent" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
