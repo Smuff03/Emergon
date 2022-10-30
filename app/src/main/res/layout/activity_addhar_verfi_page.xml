@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/shadesgrey"
+    android:background="@drawable/easymed"
     tools:context=".Addhar_verfi_page">
 
     <TextView
@@ -12,29 +12,33 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:text="Enter the Addhar no. below"
+        android:text="Enter your provided Doctor ID:"
         android:textAlignment="center"
-        android:textColor="@color/awhite"
+        android:textColor="@color/black"
+        android:textColorHint="@color/awhite"
         android:textSize="40dp" />
 
     <EditText
-        android:textColorHint="@color/awhite"
-        android:textColor="@color/awhite"
         android:id="@+id/addhar_input_box"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/instruction_txt"
         android:layout_marginTop="100dp"
         android:width="180sp"
-        android:hint="Addhar no." />
+        android:hint="Enter here."
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
+
     <Button
+        android:id="@+id/psub"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/addhar_input_box"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="80dp"
         android:width="180dp"
+        android:backgroundTint="@color/awhite"
         android:text="Submit"
-        android:layout_centerHorizontal="true"
-        />
+        android:textColor="@color/black" />
 
 </RelativeLayout>

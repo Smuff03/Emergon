@@ -52,7 +52,7 @@ public class patient_new extends AppCompatActivity {
                     makeToast("Password must consist one capital letter");
                 } else if (!ps.matches(lowerCaseChars ))
                 {
-                    makeToast("Password must contain lower cases");
+                    makeToast("Passwor must contain lower cases");
                 } else if (!ps.matches(numbers ))
                 {
                     makeToast("Password must consist some numerical");
@@ -64,8 +64,9 @@ public class patient_new extends AppCompatActivity {
                     SharedPreferences.Editor editor = preferences.edit();
                     editor.putString("patient_name",uname);
                     editor.putString("patient_pass",ps);
+                    editor.putString("gno","0");
                     editor.putString("login","patient");
-                    dataholder obj=new dataholder(uname,ps,"","","","","","","","","","","");
+                    dataholder obj=new dataholder(uname,ps,"","","","","","","","","","","0");
                     Image_dataholder obj1 = new Image_dataholder("","","","");
                     FirebaseDatabase db=FirebaseDatabase.getInstance();
                     DatabaseReference node= db.getReference(uname);
