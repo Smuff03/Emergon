@@ -4,14 +4,22 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Emergon/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2425" />
+        <entry key="..\:/Emergon/app/src/main/res/drawable/easymed.xml" value="0.141" />
         <entry key="..\:/Emergon/app/src/main/res/drawable/ic_baseline_credit_card_24.xml" value="0.172" />
         <entry key="..\:/Emergon/app/src/main/res/drawable/ic_baseline_credit_card_24_card_24.xml" value="0.172" />
+        <entry key="..\:/Emergon/app/src/main/res/drawable/ic_baseline_folder_copy_24.xml" value="0.141" />
         <entry key="..\:/Emergon/app/src/main/res/drawable/ic_baseline_qr_code_scanner_24.xml" value="0.172" />
         <entry key="..\:/Emergon/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2425" />
         <entry key="..\:/Emergon/app/src/main/res/drawable/ic_menu_camera.xml" value="0.2425" />
         <entry key="..\:/Emergon/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.2425" />
+        <entry key="..\:/Emergon/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.141" />
+        <entry key="..\:/Emergon/app/src/main/res/drawable/ic_round_navigate_next_24.xml" value="0.141" />
+        <entry key="..\:/Emergon/app/src/main/res/drawable/ic_round_skip_next_24.xml" value="0.141" />
+        <entry key="..\:/Emergon/app/src/main/res/drawable/shadesgrey.xml" value="0.141" />
         <entry key="..\:/Emergon/app/src/main/res/drawable/side_nav_bar.xml" value="0.2425" />
+        <entry key="..\:/Emergon/app/src/main/res/layout/activity_crpres.xml" value="0.23645833333333333" />
         <entry key="..\:/Emergon/app/src/main/res/layout/activity_hlogin.xml" value="0.23645833333333333" />
+        <entry key="..\:/Emergon/app/src/main/res/layout/activity_hos_scan_res.xml" value="0.23645833333333333" />
         <entry key="..\:/Emergon/app/src/main/res/layout/activity_hospital_login.xml" value="0.23645833333333333" />
         <entry key="..\:/Emergon/app/src/main/res/layout/activity_hospital_new.xml" value="0.23645833333333333" />
         <entry key="..\:/Emergon/app/src/main/res/layout/activity_main.xml" value="0.22239583333333332" />
@@ -25,8 +33,10 @@
         <entry key="..\:/Emergon/app/src/main/res/layout/content_patient.xml" value="0.23645833333333333" />
         <entry key="..\:/Emergon/app/src/main/res/layout/fragment_casefolder.xml" value="0.23645833333333333" />
         <entry key="..\:/Emergon/app/src/main/res/layout/fragment_gallery.xml" value="0.2328125" />
-        <entry key="..\:/Emergon/app/src/main/res/layout/fragment_home.xml" value="0.4" />
+        <entry key="..\:/Emergon/app/src/main/res/layout/fragment_gene.xml" value="0.23645833333333333" />
+        <entry key="..\:/Emergon/app/src/main/res/layout/fragment_home.xml" value="0.21851851851851853" />
         <entry key="..\:/Emergon/app/src/main/res/layout/fragment_slideshow.xml" value="0.2328125" />
+        <entry key="..\:/Emergon/app/src/main/res/layout/fragment_viewpres.xml" value="0.23645833333333333" />
         <entry key="..\:/Emergon/app/src/main/res/layout/nav_header_patient.xml" value="0.2328125" />
         <entry key="..\:/Emergon/app/src/main/res/layout/patient_login.xml" value="0.23645833333333333" />
         <entry key="..\:/Emergon/app/src/main/res/menu/activity_main_drawer.xml" value="0.264" />
