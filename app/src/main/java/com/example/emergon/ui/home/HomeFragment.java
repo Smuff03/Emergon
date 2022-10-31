@@ -29,7 +29,7 @@ public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
     Button homebut;
-    EditText ad,dob,email,ph,age,hg,wg,mc,n,bg;
+    EditText ad,dob,email,ph,age,hg,wg,mc,n,bg,add;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -40,7 +40,7 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         Activity activity = getActivity();
-        String N1,Ad1,Db1,Em1,Ph1,Ag1,Hg1,Wg1,Mc1,Bg1;
+        String N1,Ad1,Db1,Em1,Ph1,Ag1,Hg1,Wg1,Mc1,Bg1,Add1;
         SharedPreferences preferences = activity.getSharedPreferences("checkbox",activity.MODE_PRIVATE);
         String uname = preferences.getString("patient_name","");
         String ps = preferences.getString("patient_pass","");
@@ -57,6 +57,7 @@ public class HomeFragment extends Fragment {
         wg = root.findViewById(R.id.ewg);
         mc = root.findViewById(R.id.emc);
         bg = root.findViewById(R.id.ebg);
+        add = root.findViewById(R.id.eadd);
         N1 = res(uname,"n");
         Db1 = res(uname,"dod");
         Em1 = res(uname,"email");
@@ -67,6 +68,7 @@ public class HomeFragment extends Fragment {
         Bg1 = res(uname,"bg");
         Mc1 = res(uname,"mc");
         Ad1 = res(uname,"ad");
+        Add1 = res(uname,"add");
 
         homebut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,11 +84,12 @@ public class HomeFragment extends Fragment {
                 String Wg = wg.getText().toString();
                 String Mc = mc.getText().toString();
                 String Bg = bg.getText().toString();
+                String Add = add.getText().toString();
                 if(N.isEmpty()||Ad.isEmpty()||Dob.isEmpty()||Email.isEmpty()||Ph.isEmpty()||Age.isEmpty()||Hg.isEmpty()||
-                Wg.isEmpty()||Mc.isEmpty()||Bg.isEmpty()){
+                Wg.isEmpty()||Mc.isEmpty()||Bg.isEmpty()||Add.isEmpty()){
                     Toast.makeText(activity,"please enter all data",Toast.LENGTH_SHORT).show();
                 }else{
-                    dataholder obj=new dataholder(uname,ps,n.getText().toString(),ad.getText().toString(),dob.getText().toString(),email.getText().toString(),ph.getText().toString(),age.getText().toString(),hg.getText().toString(),wg.getText().toString(),mc.getText().toString(),bg.getText().toString(),g);
+                    dataholder obj=new dataholder(uname,ps,n.getText().toString(),ad.getText().toString(),dob.getText().toString(),email.getText().toString(),ph.getText().toString(),age.getText().toString(),hg.getText().toString(),wg.getText().toString(),mc.getText().toString(),bg.getText().toString(),add.getText().toString(),g);
                     FirebaseDatabase db=FirebaseDatabase.getInstance();
                     DatabaseReference node= db.getReference(uname);
                     node.setValue(obj);
@@ -104,6 +107,7 @@ public class HomeFragment extends Fragment {
                     editor.putString("wg",Wg);
                     editor.putString("mc",Mc);
                     editor.putString("bg",Bg);
+                    editor.putString("add",Add);
                     editor.apply();
                 }
             }
@@ -152,6 +156,10 @@ public class HomeFragment extends Fragment {
                     case "bg":
                         bg.setText(value, TextView.BufferType.EDITABLE);
                         break;
+                    case "add":
+                        bg.setText(value, TextView.BufferType.EDITABLE);
+                        break;
+
                     default:
                         ad.setText("this is default", TextView.BufferType.EDITABLE);
                         break;
