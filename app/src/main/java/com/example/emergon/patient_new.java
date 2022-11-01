@@ -65,7 +65,7 @@ public class patient_new extends AppCompatActivity {
                     editor.putString("patient_name",uname);
                     editor.putString("patient_pass",ps);
                     editor.putString("login","patient");
-                    dataholder obj=new dataholder(uname,ps,"","","","","","","","","","");
+                    dataholder obj=new dataholder(uname,ps,"","","","","","","","","","","","");
                     Image_dataholder obj1 = new Image_dataholder("","","","");
                     FirebaseDatabase db=FirebaseDatabase.getInstance();
                     DatabaseReference node= db.getReference(uname);
