@@ -157,7 +157,7 @@ public class HomeFragment extends Fragment {
                         bg.setText(value, TextView.BufferType.EDITABLE);
                         break;
                     case "add":
-                        bg.setText(value, TextView.BufferType.EDITABLE);
+                        add.setText(value, TextView.BufferType.EDITABLE);
                         break;
 
                     default:
