@@ -57,7 +57,7 @@ public class HomeFragment extends Fragment {
         wg = root.findViewById(R.id.ewg);
         mc = root.findViewById(R.id.emc);
         bg = root.findViewById(R.id.ebg);
-        add = root.findViewById(R.id.eadd);
+        add = root.findViewById(R.id.ead);
         N1 = res(uname,"n");
         Db1 = res(uname,"dod");
         Em1 = res(uname,"email");
@@ -89,7 +89,7 @@ public class HomeFragment extends Fragment {
                 Wg.isEmpty()||Mc.isEmpty()||Bg.isEmpty()||Add.isEmpty()){
                     Toast.makeText(activity,"please enter all data",Toast.LENGTH_SHORT).show();
                 }else{
-                    dataholder obj=new dataholder(uname,ps,n.getText().toString(),ad.getText().toString(),dob.getText().toString(),email.getText().toString(),ph.getText().toString(),age.getText().toString(),hg.getText().toString(),wg.getText().toString(),mc.getText().toString(),bg.getText().toString(),add.getText().toString(),g);
+                    dataholder obj=new dataholder(uname,ps,n.getText().toString(),ad.getText().toString(),dob.getText().toString(),email.getText().toString(),ph.getText().toString(),age.getText().toString(),hg.getText().toString(),wg.getText().toString(),mc.getText().toString(),bg.getText().toString(),g,add.getText().toString());
                     FirebaseDatabase db=FirebaseDatabase.getInstance();
                     DatabaseReference node= db.getReference(uname);
                     node.setValue(obj);

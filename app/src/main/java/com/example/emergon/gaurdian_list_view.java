@@ -36,6 +36,18 @@ public class gaurdian_list_view extends AppCompatActivity {
         String un = preferences.getString("patient_name","");
         FirebaseDatabase db=FirebaseDatabase.getInstance();
         int gn1 = Integer.parseInt(gn);
+//        DatabaseReference node1 = db.getReference("/"+un+"/gno");
+//        node1.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
         for(int i=0;i<gn1;i++){
             DatabaseReference node= db.getReference("/"+un+"/guard"+String.valueOf(i));
             node.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -53,7 +65,7 @@ public class gaurdian_list_view extends AppCompatActivity {
                 }
             });
         }
-        DatabaseReference node= db.getReference("/"+un);
+//        DatabaseReference node= db.getReference("/"+un);
 
         // he khalcha hyane modify kara list madhe items add karayla
 //        names.add("chutiya");

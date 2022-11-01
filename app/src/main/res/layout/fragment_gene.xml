@@ -30,8 +30,8 @@
 
     <Button
         android:id="@+id/gqr"
-        android:layout_width="247dp"
-        android:layout_height="38dp"
+        android:layout_width="308dp"
+        android:layout_height="44dp"
         android:layout_marginTop="36dp"
         android:text="generate a QR for Guardian"
         app:layout_constraintBottom_toTopOf="@+id/ivp"

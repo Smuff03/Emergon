@@ -26,12 +26,12 @@
     <fragment
         android:id="@+id/nav_gene"
         android:name="com.example.emergon.gene"
-        android:label="Generate QR"
+        android:label="@string/menu_gene"
         tools:layout="@layout/fragment_gene" />
 
     <fragment
         android:id="@+id/nav_vpress"
         android:name="com.example.emergon.viewpres"
-        android:label="Prescriptions"
+        android:label= "@string/menu_vrpres"
         tools:layout="@layout/fragment_viewpres" />
 </navigation>

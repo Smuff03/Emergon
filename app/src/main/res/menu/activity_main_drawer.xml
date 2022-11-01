@@ -18,11 +18,11 @@
             android:title="@string/menu_slideshow" />
         <item
             android:id="@+id/nav_gene"
-            android:icon="@drawable/ic_baseline_man_24"
-            android:title="Generate QR" />
+            android:icon="@drawable/ic_baseline_qr_code_scanner_24"
+            android:title="@string/menu_gene" />
         <item
             android:id="@+id/nav_vpress"
-            android:icon="@drawable/ic_baseline_man_24"
-            android:title="Prescriptions" />
+            android:icon="@mipmap/img"
+            android:title="@string/menu_vrpres" />
     </group>
 </menu>

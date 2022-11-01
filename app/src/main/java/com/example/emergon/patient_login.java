@@ -78,7 +78,7 @@ public class patient_login extends AppCompatActivity {
 
                                 SharedPreferences.Editor editor = preferences.edit();
                                 editor.putString("patient_name",uname);
-                                editor.putString("patient_password",ps);
+                                editor.putString("patient_pass",ps);
                                 editor.putString("login","patient");
                                 editor.apply();
                                 Intent intent = new Intent(patient_login.this, patient.class);
