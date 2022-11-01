@@ -64,9 +64,8 @@ public class patient_new extends AppCompatActivity {
                     SharedPreferences.Editor editor = preferences.edit();
                     editor.putString("patient_name",uname);
                     editor.putString("patient_pass",ps);
-                    editor.putString("gno","0");
                     editor.putString("login","patient");
-                    dataholder obj=new dataholder(uname,ps,"","","","","","","","","","","0","");
+                    dataholder obj=new dataholder(uname,ps,"","","","","","","","","","","","");
                     Image_dataholder obj1 = new Image_dataholder("","","","");
                     FirebaseDatabase db=FirebaseDatabase.getInstance();
                     DatabaseReference node= db.getReference(uname);

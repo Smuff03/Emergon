@@ -22,7 +22,8 @@
         tools:targetApi="31">
         <activity
             android:name=".crpres"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".hlogin"/>
         <activity
             android:name=".Document_upload_page"
             android:exported="false">
@@ -32,7 +33,8 @@
         </activity>
         <activity
             android:name=".hos_scan_res"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".hlogin"/>
         <activity
             android:name=".neurology"
             android:exported="false"
