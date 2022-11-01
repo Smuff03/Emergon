@@ -1,6 +1,7 @@
 package com.example.emergon.ui.slideshow;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,7 +37,11 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class SlideshowFragment extends Fragment {
@@ -88,6 +93,21 @@ public class SlideshowFragment extends Fragment {
                     Toast.makeText(activity, "Enter Valid Phone No.", Toast.LENGTH_SHORT).show();
                 }
                 else {
+//                    SharedPreferences preferences = activity.getSharedPreferences("checkbox",activity.MODE_PRIVATE);
+//                    String gn = preferences.getString("gno","");
+//                    String un = preferences.getString("patient_name","");
+//                    FirebaseDatabase db=FirebaseDatabase.getInstance();
+//                    DatabaseReference ref= FirebaseDatabase.getInstance().getReference("/"+un);
+//                    Map<String, Object> updates = new HashMap<String,Object>();
+//                    updates.put("guard"+gn, gp.getText().toString());
+//
+//                    int gn1 = Integer.parseInt(gn);
+//                    gn1  = gn1+1;
+//                    SharedPreferences.Editor editor = preferences.edit();
+//                    editor.putString("gno", String.valueOf(gn1));
+//                    updates.put("gno",String.valueOf(gn1));
+//                    editor.apply();
+//                    ref.updateChildren(updates);
                     String number = phone.getText().toString();
                     bar.setVisibility(View.VISIBLE);
                     sendverificationcode(number);
@@ -166,6 +186,21 @@ public class SlideshowFragment extends Fragment {
                         Activity activity = getActivity();
                         if(task.isSuccessful())
                         {
+                            SharedPreferences preferences = activity.getSharedPreferences("checkbox",activity.MODE_PRIVATE);
+                            String gn = preferences.getString("gno","");
+                            String un = preferences.getString("patient_name","");
+                            FirebaseDatabase db=FirebaseDatabase.getInstance();
+                            DatabaseReference ref= FirebaseDatabase.getInstance().getReference("/"+un);
+                            Map<String, Object> updates = new HashMap<String,Object>();
+                            updates.put("guard"+gn, gp.getText().toString());
+
+                            int gn1 = Integer.parseInt(gn);
+                            gn1  = gn1+1;
+                            SharedPreferences.Editor editor = preferences.edit();
+                            editor.putString("gno", String.valueOf(gn1));
+                            updates.put("gno",String.valueOf(gn1));
+                            editor.apply();
+                            ref.updateChildren(updates);
                             Toast.makeText(activity, "Login Successfull", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(activity ,SlideshowFragment.class));
                         }

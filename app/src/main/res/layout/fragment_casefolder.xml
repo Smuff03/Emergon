@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F2F5F6"
+        android:background="@drawable/shadesgrey"
         tools:context=".casefolder">
 
         <ImageView
@@ -27,7 +27,7 @@
             android:text="Medicine"
             android:textSize="18dp"
             android:textStyle="bold"
-            android:textColor="@color/white"/>
+            android:textColor="@color/awhite"/>
 
         <ImageView
             android:id="@+id/Cardiology"
@@ -50,7 +50,7 @@
             android:text="Cardiology"
             android:textSize="18dp"
             android:textStyle="bold"
-            android:textColor="@color/white"/>
+            android:textColor="@color/awhite"/>
 
         <ImageView
             android:id="@+id/Skin"
@@ -73,7 +73,7 @@
             android:text="skin"
             android:textSize="18dp"
             android:textStyle="bold"
-            android:textColor="@color/white"/>
+            android:textColor="@color/awhite"/>
 
         <ImageView
             android:id="@+id/Neurology"
@@ -96,7 +96,7 @@
             android:text="Neurology"
             android:textSize="18dp"
             android:textStyle="bold"
-            android:textColor="@color/white"/>
+            android:textColor="@color/awhite"/>
 
 
 

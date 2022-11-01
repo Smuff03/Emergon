@@ -44,6 +44,7 @@ public class HomeFragment extends Fragment {
         SharedPreferences preferences = activity.getSharedPreferences("checkbox",activity.MODE_PRIVATE);
         String uname = preferences.getString("patient_name","");
         String ps = preferences.getString("patient_pass","");
+        String g = preferences.getString("gno","");
         ph = root.findViewById(R.id.eph);
         homebut = root.findViewById(R.id.homeconfirm);
         n =  root.findViewById(R.id.ename);
@@ -57,7 +58,6 @@ public class HomeFragment extends Fragment {
         mc = root.findViewById(R.id.emc);
         bg = root.findViewById(R.id.ebg);
         add = root.findViewById(R.id.eadd);
-
         N1 = res(uname,"n");
         Db1 = res(uname,"dod");
         Em1 = res(uname,"email");
@@ -68,7 +68,7 @@ public class HomeFragment extends Fragment {
         Bg1 = res(uname,"bg");
         Mc1 = res(uname,"mc");
         Ad1 = res(uname,"ad");
-        Add1 = res(uname,"ad");
+        Add1 = res(uname,"add");
 
         homebut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,13 +89,14 @@ public class HomeFragment extends Fragment {
                 Wg.isEmpty()||Mc.isEmpty()||Bg.isEmpty()||Add.isEmpty()){
                     Toast.makeText(activity,"please enter all data",Toast.LENGTH_SHORT).show();
                 }else{
-                    dataholder obj=new dataholder(uname,ps,n.getText().toString(),ad.getText().toString(),dob.getText().toString(),email.getText().toString(),ph.getText().toString(),age.getText().toString(),hg.getText().toString(),wg.getText().toString(),mc.getText().toString(),bg.getText().toString(),add.getText().toString());
+                    dataholder obj=new dataholder(uname,ps,n.getText().toString(),ad.getText().toString(),dob.getText().toString(),email.getText().toString(),ph.getText().toString(),age.getText().toString(),hg.getText().toString(),wg.getText().toString(),mc.getText().toString(),bg.getText().toString(),add.getText().toString(),g);
                     FirebaseDatabase db=FirebaseDatabase.getInstance();
                     DatabaseReference node= db.getReference(uname);
                     node.setValue(obj);
                     Toast.makeText(activity,"Data saved",Toast.LENGTH_SHORT).show();
                     SharedPreferences preferences = activity.getSharedPreferences("checkbox",activity.MODE_PRIVATE);
                     SharedPreferences.Editor editor = preferences.edit();
+
                     editor.putString("ph",Ph);
                     editor.putString("n",N);
                     editor.putString("ad",Ad);
@@ -156,8 +157,9 @@ public class HomeFragment extends Fragment {
                         bg.setText(value, TextView.BufferType.EDITABLE);
                         break;
                     case "add":
-                        add.setText(value, TextView.BufferType.EDITABLE);
+                        bg.setText(value, TextView.BufferType.EDITABLE);
                         break;
+
                     default:
                         ad.setText("this is default", TextView.BufferType.EDITABLE);
                         break;

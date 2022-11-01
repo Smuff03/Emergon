@@ -28,6 +28,7 @@ import com.example.emergon.R;
 import com.example.emergon.databinding.FragmentCasefolderBinding;
 import com.example.emergon.databinding.FragmentGeneBinding;
 import com.example.emergon.databinding.FragmentSlideshowBinding;
+import com.example.emergon.databinding.FragmentViewpresBinding;
 import com.example.emergon.ui.gallery.GalleryFragment;
 import com.example.emergon.ui.slideshow.SlideshowFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -46,51 +47,57 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.concurrent.TimeUnit;
 
-public class gene extends Fragment {
-    private FragmentGeneBinding binding;
-    ImageView iv;
-    Button b,gq;
+public class viewpres extends Fragment {
+    private FragmentViewpresBinding binding;
+    EditText ed;
+    TextView t1,t2;
+    Button b;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
 
-        binding  = FragmentGeneBinding.inflate(inflater,container,false);
+        binding  = FragmentViewpresBinding.inflate(inflater,container,false);
         View root = binding.getRoot();
         Activity activity = getActivity();
-        iv = root.findViewById(R.id.ivp);
-        b = root.findViewById(R.id.gene);
-        gq = root.findViewById(R.id.gqr);
+        ed = root.findViewById(R.id.vprname);
+        b = root.findViewById(R.id.vprbut);
+        t1 = root.findViewById(R.id.vprt1);
+        t2 = root.findViewById(R.id.vprt2);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                QR q = new QR();
-                SharedPreferences preferences = activity.getSharedPreferences("checkbox",activity.MODE_PRIVATE);
-                String s = preferences.getString("patient_name","");
-                q.qrgen(iv,s);
-            }
-        });
-        gq.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                QR q = new QR();
-                SharedPreferences preferences = activity.getSharedPreferences("checkbox",activity.MODE_PRIVATE);
-                String s = preferences.getString("patient_name","");
-                FirebaseDatabase db=FirebaseDatabase.getInstance();
-                DatabaseReference node= db.getReference("/"+s+"/ph");
-                node.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String value = snapshot.getValue(String.class);
-                        q.qrgen(iv,value);
+                String name = ed.getText().toString();
+                Activity activity = getActivity();
+                if(name.isEmpty()){
+                    Toast.makeText(activity, "Enter Valid Doctor name", Toast.LENGTH_SHORT).show();
+                }else{
+                    FirebaseDatabase db=FirebaseDatabase.getInstance();
+                    try {
+
+                        SharedPreferences preferences = activity.getSharedPreferences("checkbox",activity.MODE_PRIVATE);
+                        String uname = preferences.getString("patient_name","");
+                        DatabaseReference node= db.getReference("/"+uname+"/"+name);
+
+                        node.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                String value = snapshot.getValue(String.class);
+                                t1.setVisibility(View.VISIBLE);
+                                t2.setVisibility(View.VISIBLE);
+                                t2.setText(value);
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+                                Toast.makeText(activity, "Turn On Internet", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }catch (Exception FirebaseError ){
+                        Toast.makeText(activity, "Enter Correct ID", Toast.LENGTH_SHORT).show();
                     }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-
+                }
             }
         });
         return root;
