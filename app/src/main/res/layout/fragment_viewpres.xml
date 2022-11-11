@@ -22,10 +22,10 @@
 
     <Button
         android:id="@+id/vprbut"
-        android:layout_width="178dp"
-        android:layout_height="44dp"
+        android:layout_width="302dp"
+        android:layout_height="42dp"
         android:layout_marginTop="64dp"
-        android:text="Button"
+        android:text="View Prescription"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.218"
         app:layout_constraintStart_toStartOf="parent"

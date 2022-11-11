@@ -85,7 +85,7 @@ public class Scanner_page extends AppCompatActivity implements View.OnClickListe
             if(result.getContents() !=null){
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 String s = result.getContents();
-                Toast.makeText(this,s,Toast.LENGTH_LONG).show();
+                Toast.makeText(Scanner_page.this,s,Toast.LENGTH_LONG).show();
                 builder.setMessage(result.getContents());
                 builder.setTitle("scanning result");
                 builder.setPositiveButton("scan Again", new DialogInterface.OnClickListener() {
