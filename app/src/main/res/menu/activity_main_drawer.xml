@@ -25,5 +25,9 @@
             android:id="@+id/nav_vpress"
             android:icon="@mipmap/img"
             android:title="@string/menu_vrpres" />
+        <item
+            android:id="@+id/nav_map"
+            android:icon="@mipmap/img"
+            android:title="@string/menu_map" />
     </group>
 </menu>

@@ -2,6 +2,8 @@ package com.example.emergon;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -29,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         }else if(checkbox.equals("false")){
             Toast.makeText(this,"please sign in",Toast.LENGTH_SHORT).show();
         }
-
 
     }
     public void openActivity(View view) {

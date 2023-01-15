@@ -64,5 +64,7 @@ public class Addhar_verfi_page extends AppCompatActivity {
 
             }
         });
+
     }
+
 }

@@ -58,8 +58,8 @@
         <activity
             android:name=".gaurdian_list_view"
             android:exported="false"
-            android:label="Neurologyy"
-            android:parentActivityName=".casefolder" />
+            android:label="Guardian List"
+            android:parentActivityName="ui.slideshow.SlideshowFragment" />
         <activity
             android:name=".Scanner_page"
             android:exported="false" />

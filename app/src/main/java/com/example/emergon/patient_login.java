@@ -4,6 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -32,7 +35,6 @@ public class patient_login extends AppCompatActivity {
         un= findViewById(R.id.Username);
         pass = findViewById(R.id.Password);
         cb = findViewById(R.id.cb2);
-
 
         b = findViewById(R.id.button3);
         b.setOnClickListener(new View.OnClickListener() {

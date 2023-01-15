@@ -33,6 +33,10 @@ public class crpres extends AppCompatActivity {
         t  = findViewById(R.id.crpresdname);
         SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
         String dn = preferences.getString("dname","");
+        if(dn==""){
+            startActivity(new Intent(crpres.this, Addhar_verfi_page.class));
+            Toast.makeText(this, "Enter correct ID", Toast.LENGTH_SHORT).show();
+        }
         t.setText("Welcome Dr."+dn);
         B = findViewById(R.id.crpresbut);
         Name = findViewById(R.id.ptname);

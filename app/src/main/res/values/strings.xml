@@ -22,6 +22,7 @@
     <string name="menu_slideshow">Guardian Details</string>
     <string name="menu_gene">Generate QR</string>
     <string name="menu_vrpres">Prescriptions</string>
+    <string name="menu_map">Prescriptions</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
