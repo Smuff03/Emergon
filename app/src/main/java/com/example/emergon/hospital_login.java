@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 public class hospital_login extends AppCompatActivity {
     private EditText hname,hreg,pass;
     private CheckBox cb;
-    private Button b;
+    private Button b,b1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +32,15 @@ public class hospital_login extends AppCompatActivity {
         hreg = findViewById(R.id.editTextTextPersonName2);
         cb = findViewById(R.id.cb3);
         b = findViewById(R.id.button4);
+        b1 = findViewById(R.id.buttongetosignup);
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(hospital_login.this, "Opening Sign up for hospital", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(hospital_login.this, hospital_new.class);
+                startActivity(intent);
+            }
+        });
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

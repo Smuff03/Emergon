@@ -2,8 +2,6 @@ package com.example.emergon;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Notification;
-import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,12 +9,22 @@ import android.view.View;
 import android.widget.Toast;
 import android.content.Context;
 
+import com.google.firebase.firestore.AggregateQuery;
+import com.google.firebase.firestore.AggregateQuerySnapshot;
+import com.google.firebase.firestore.AggregateSource;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldPath;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
         String checkbox = preferences.getString("b","");
         String log = preferences.getString("login","");

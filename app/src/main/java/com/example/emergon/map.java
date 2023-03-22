@@ -1,6 +1,7 @@
 package com.example.emergon;
 
 import android.app.Activity;
+import android.app.SearchManager;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
@@ -51,7 +52,7 @@ import java.util.concurrent.TimeUnit;
 
 public class map extends Fragment {
     private FragmentMapBinding binding;
-    Button b;
+    private Button b,b1;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -61,6 +62,7 @@ public class map extends Fragment {
         View root = binding.getRoot();
         Activity activity = getActivity();
         b = root.findViewById(R.id.map1);
+        b1 = root.findViewById(R.id.test);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,8 +81,13 @@ public class map extends Fragment {
                         int len = value.length();
                         String lon = value.substring(comma+1, len);
                         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:"+value+"?q="+value+"(Patient+Location)"));
-                        startActivity(intent);}
+                        startActivity(intent);
+
+                        }
                         else{
+//                            Intent mapIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=hospitals"));
+//                            mapIntent.setPackage("com.google.android.apps.maps");
+//                            startActivity(mapIntent);
                             Toast.makeText(activity, "there is no Accident", Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -91,6 +98,18 @@ public class map extends Fragment {
                 });
 //                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:19.07613608801284,72.99426826825649?q=19.07613608801284,72.99426826825649(Patient+Location)"));
 //                startActivity(intent);
+            }
+        });
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String query = "doctors near me";
+                Activity activity = getActivity();
+                Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
+                intent.putExtra(SearchManager.QUERY, query); // query contains search string
+                startActivity(intent);
+//
+//                startActivity(new Intent(activity, graph.class));
             }
         });
 

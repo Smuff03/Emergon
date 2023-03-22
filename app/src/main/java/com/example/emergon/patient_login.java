@@ -4,9 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -26,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 public class patient_login extends AppCompatActivity {
     private EditText un,pass;
     private CheckBox cb;
-    private Button b;
+    private Button b,b1;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +32,17 @@ public class patient_login extends AppCompatActivity {
         un= findViewById(R.id.Username);
         pass = findViewById(R.id.Password);
         cb = findViewById(R.id.cb2);
+        b1 = findViewById(R.id.buuton);
 
         b = findViewById(R.id.button3);
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(patient_login.this, "opening physical Activity", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(patient_login.this, patient_new.class);
+                startActivity(intent);
+            }
+        });
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,7 +57,7 @@ public class patient_login extends AppCompatActivity {
                 if(uname.isEmpty() || ps.isEmpty()){
                     Toast.makeText(patient_login.this,"please enter all data",Toast.LENGTH_SHORT).show();
 
-               }
+                }
                 else{
                     FirebaseDatabase db=FirebaseDatabase.getInstance();
                     DatabaseReference node= db.getReference("/"+uname+"/ps");
@@ -133,8 +139,8 @@ public class patient_login extends AppCompatActivity {
     }
     Toast msg;
     private void makeToast(String s){
-           if ( msg != null) msg.cancel();
-            msg = Toast.makeText(getApplicationContext(),s, Toast.LENGTH_SHORT);
+        if ( msg != null) msg.cancel();
+        msg = Toast.makeText(getApplicationContext(),s, Toast.LENGTH_SHORT);
     }
     public boolean isValidPassword(String password)
     {

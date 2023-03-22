@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.emergon">
+    <!--Permissions for internet-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.USE_BIOMETRIC" />
@@ -21,9 +24,12 @@
         android:theme="@style/Theme.Emergon"
         tools:targetApi="31">
         <activity
+            android:name=".graph"
+            android:exported="false" />
+        <activity
             android:name=".crpres"
             android:exported="false"
-            android:parentActivityName=".hlogin"/>
+            android:parentActivityName=".hlogin" />
         <activity
             android:name=".Document_upload_page"
             android:exported="false">
@@ -34,7 +40,7 @@
         <activity
             android:name=".hos_scan_res"
             android:exported="false"
-            android:parentActivityName=".hlogin"/>
+            android:parentActivityName=".hlogin" />
         <activity
             android:name=".neurology"
             android:exported="false"

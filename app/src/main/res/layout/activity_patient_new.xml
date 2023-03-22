@@ -1,63 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".patient_new">
+    tools:ignore="MissingDefaultResource"
+    android:background="@drawable/backlogin"
+    tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/editTextTextPersonName3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:ems="15"
-        android:hint="Username"
-        android:inputType="textPersonName"
-        android:layout_centerHorizontal="true"
-        />
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/editTextTextPassword2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:ems="15"
-        android:hint="Password"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/editTextTextPersonName3"
-        />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="317dp"
+            android:layout_height="69dp"
+            android:layout_margin="50dp"
+            android:gravity="center"
+            android:text="PATIENT SIGNUP"
+            android:textSize="30sp"
+            android:textColor="@color/awhite"
 
-    <EditText
-        android:id="@+id/editTextTextPassword3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:ems="15"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/editTextTextPassword2"
-        />
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        android:layout_marginTop="40dp"
-        android:layout_below="@id/cb1"
-        android:layout_centerHorizontal="true"
-        android:width="180dp"
-        />
+        <EditText
+            android:textColor="@color/awhite"
+            android:textColorHint="@color/awhite"
+            android:id="@+id/editTextTextPersonName3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:ems="10"
+            android:textStyle="bold"
+            android:inputType="textPersonName"
+            android:hint="UserName" />
 
-    <CheckBox
-        android:id="@+id/cb1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Remember me"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/editTextTextPassword3"
-        />
-</RelativeLayout>
+        <EditText
+            android:id="@+id/editTextTextPassword2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:ems="10"
+            android:textStyle="bold"
+            android:textColor="@color/awhite"
+            android:textColorHint="@color/awhite"
+            android:hint="Password" />
+
+        <EditText
+            android:id="@+id/editTextTextPassword3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:ems="10"
+            android:textStyle="bold"
+            android:textColor="@color/awhite"
+            android:textColorHint="@color/awhite"
+            android:inputType="textPassword"
+            android:hint="Confirm Password" />
+
+        <CheckBox
+            android:id="@+id/cb1"
+            android:layout_width="175dp"
+            android:layout_height="52dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/awhite"
+            android:text="Remember Me" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:backgroundTint="@color/black"
+            android:text="REGISTER"
+            android:textColor="@color/white1"
+            android:textStyle="bold" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

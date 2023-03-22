@@ -1,60 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".patient_login">
+    android:background="@drawable/backlogin"
+    tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:width="180dp"
-        android:onClick="openActivity"
-        android:text="Login" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/Username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
-        android:ems="15"
-        android:hint="Username"
-        android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/Password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Username"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:ems="15"
-        android:hint="Password"
-        android:inputType="textPassword" />
+        <ImageView
+            android:id="@+id/patient"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_marginTop="90dp"
+            android:src="@drawable/patient" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/cb2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:onClick="openlogin"
-        android:text="Don't have account?Create account" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/patient_login"
+            android:textColor="@color/awhite"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-    <CheckBox
-        android:id="@+id/cb2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/Password"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="Remember me" />
 
-</RelativeLayout>
+        <EditText
+            android:id="@+id/Username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:hint="Enter Username"
+            android:textColor="@color/awhite"
+            android:textColorHint="@color/awhite"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/Password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:textColor="@color/awhite"
+            android:textColorHint="@color/awhite"
+            android:inputType="textPassword"
+            android:hint="Pasword"/>
+
+
+        <CheckBox
+            android:id="@+id/cb2"
+            android:layout_width="156dp"
+            android:layout_height="52dp"
+            android:textColor="@color/awhite"
+            android:text="Remember Me" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <Button
+
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:backgroundTint="@color/black"
+                android:text="LOGIN"
+                android:textColor="@color/white1"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/buuton"
+                android:layout_width="355dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="90dp"
+                android:backgroundTint="@color/black"
+                android:text="Sign Up"
+                android:textColor="@color/white1"
+                android:textStyle="bold"
+                />
+
+            <ProgressBar
+                android:id="@+id/progressbar_sending_otp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+
+
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+</ScrollView>

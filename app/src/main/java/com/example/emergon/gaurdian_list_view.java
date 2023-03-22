@@ -93,7 +93,8 @@ public class gaurdian_list_view extends AppCompatActivity {
                 final EditText input = (EditText) db.findViewById(R.id.userInput);
                 builder.setPositiveButton("Yes", (DialogInterface.OnClickListener) (dialog, which) -> {
                     String s = input.getText().toString();
-                    change(i,s);
+                    String oldname = adapter.getItem(i);
+                    change(i,s,oldname);
                     Toast.makeText(gaurdian_list_view.this, s, Toast.LENGTH_SHORT).show();
                 });
                 builder.setNegativeButton("No", (DialogInterface.OnClickListener) (dialog, which) -> {
@@ -109,7 +110,7 @@ public class gaurdian_list_view extends AppCompatActivity {
 //        gaurdian_list.setAdapter(adapter);
     }
     Toast msg;
-    private void change(int i,String s){
+    private void change(int i,String s,String old_name){
         names.add(i,s);
         SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
         String un = preferences.getString("patient_name","");
@@ -119,6 +120,8 @@ public class gaurdian_list_view extends AppCompatActivity {
         DatabaseReference node= db.getReference("/"+un);
         Map<String, Object> updates = new HashMap<String,Object>();
         updates.put("guard"+i, s);
+        firestore f = new firestore();
+        f.update_guardian_name(un,s,old_name);
         node.updateChildren(updates);
     }
     private void makeToast(String s){

@@ -4,73 +4,97 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".hospital_new">
+    tools:ignore="MissingDefaultResource"
+    android:background="@drawable/backlogin"
+    tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/editTextTextPersonName4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="52dp"
-        android:ems="10"
-        android:hint="Hospital Name"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName5"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName5" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="209dp"
-        android:ems="10"
-        android:hint="Registration No."
-        android:inputType="textPersonName"
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/editTextTextPassword4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="2dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName5"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="317dp"
+            android:layout_height="69dp"
+            android:layout_margin="50dp"
+            android:gravity="center"
+            android:text="HOSPITAL SIGNUP"
+            android:textSize="30sp"
+            android:textColor="@color/awhite"
+            android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/editTextTextPassword5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="58dp"
-        android:ems="10"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword4"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword4" />
+        <EditText
+            android:id="@+id/editTextTextPersonName4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:ems="10"
+            android:textStyle="bold"
+            android:textColor="@color/awhite"
+            android:textColorHint="@color/awhite"
+            android:inputType="textPersonName"
+            android:hint="Hospital Name" />
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName5"
-        app:layout_constraintHorizontal_bias="0.301"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName5"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword5" />
+        <EditText
+            android:id="@+id/editTextTextPersonName5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:ems="10"
+            android:textStyle="bold"
+            android:textColor="@color/awhite"
+            android:textColorHint="@color/awhite"
+            android:inputType="textPersonName"
+            android:hint="Hospital Registration No" />
 
-    <CheckBox
-        android:id="@+id/cb4"
-        android:layout_width="206dp"
-        android:layout_height="38dp"
-        android:text="remember me"
-        app:layout_constraintBottom_toTopOf="@+id/button6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword5" />
+        <EditText
+            android:id="@+id/editTextTextPassword4"
+            android:textColor="@color/awhite"
+            android:textColorHint="@color/awhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:ems="10"
+            android:textStyle="bold"
+            android:inputType="textPassword"
+            android:hint="Password" />
+
+        <EditText
+            android:id="@+id/editTextTextPassword5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:ems="10"
+            android:textStyle="bold"
+            android:textColor="@color/awhite"
+            android:textColorHint="@color/awhite"
+            android:inputType="textPassword"
+            android:hint="Confirm Password" />
+
+        <CheckBox
+            android:id="@+id/cb4"
+            android:layout_width="175dp"
+            android:layout_height="52dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/awhite"
+
+            android:text="Remember Me" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+
+
+            android:backgroundTint="@color/black"
+            android:text="REGISTER"
+            android:textColor="@color/white1"
+            android:textStyle="bold" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

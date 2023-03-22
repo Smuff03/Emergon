@@ -8,4 +8,11 @@
     <color name="black">#222121</color>
     <color name="white">#222121</color>
     <color name="awhite">#f2eded</color>
+    <color name="colorPrimary">#FFC107</color>
+    <color name="colorPrimaryDark">#FFC107</color>
+    <color name="colorAccent">#FF5722</color>
+    <color name="colortextfirst">#000000</color>
+    <color name="colortextsecond">#777474</color>
+    <color name="color_view">#A5A2A2</color>
+    <color name="white1">#fff</color>
 </resources>

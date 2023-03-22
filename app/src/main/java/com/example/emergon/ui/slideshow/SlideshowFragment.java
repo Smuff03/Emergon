@@ -27,6 +27,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.emergon.R;
 import com.example.emergon.Scanner_page;
 import com.example.emergon.databinding.FragmentSlideshowBinding;
+import com.example.emergon.firestore;
 import com.example.emergon.gaurdian_list_view;
 import com.example.emergon.ui.gallery.GalleryFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -50,7 +51,7 @@ public class SlideshowFragment extends Fragment {
     Button btngenOTP, btnverify,vg;
     ImageButton ib;
     FirebaseAuth mAuth;
-    String verificationID;
+    String verificationID,number;
     ProgressBar bar;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -108,7 +109,7 @@ public class SlideshowFragment extends Fragment {
 //                    updates.put("gno",String.valueOf(gn1));
 //                    editor.apply();
 //                    ref.updateChildren(updates);
-                    String number = phone.getText().toString();
+                    number = phone.getText().toString();
                     bar.setVisibility(View.VISIBLE);
                     sendverificationcode(number);
                 }
@@ -186,13 +187,13 @@ public class SlideshowFragment extends Fragment {
                         Activity activity = getActivity();
                         if(task.isSuccessful())
                         {
+                            String name = gp.getText().toString();
                             SharedPreferences preferences = activity.getSharedPreferences("checkbox",activity.MODE_PRIVATE);
                             String gn = preferences.getString("gno","");
                             String un = preferences.getString("patient_name","");
-                            FirebaseDatabase db=FirebaseDatabase.getInstance();
                             DatabaseReference ref= FirebaseDatabase.getInstance().getReference("/"+un);
                             Map<String, Object> updates = new HashMap<String,Object>();
-                            updates.put("guard"+gn, gp.getText().toString());
+                            updates.put("guard"+gn, name);
 
                             int gn1 = Integer.parseInt(gn);
                             gn1  = gn1+1;
