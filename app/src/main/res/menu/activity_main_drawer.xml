@@ -28,6 +28,18 @@
         <item
             android:id="@+id/nav_map"
             android:icon="@mipmap/img"
-            android:title="@string/menu_map" />
+            android:title="@string/location" />
+        <item
+            android:id="@+id/nav_pulse"
+            android:icon="@mipmap/img"
+            android:title="@string/pulse" />
+        <item
+            android:id="@+id/nav_reminder"
+            android:icon="@mipmap/img"
+            android:title="Medicine Reminder" />
+        <item
+            android:id="@+id/nav_medical"
+            android:icon="@mipmap/img"
+            android:title="First Aid &amp; Emergency" />
     </group>
 </menu>

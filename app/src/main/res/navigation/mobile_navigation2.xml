@@ -57,6 +57,33 @@
     <fragment
         android:id="@+id/nav_map"
         android:name="com.example.emergon.map"
-        android:label= "@string/menu_map"
-        tools:layout="@layout/fragment_map" />
+        android:label="@string/location"
+        tools:layout="@layout/fragment_map" >
+        <action
+            android:id="@+id/action_nav_map_to_nav_pulse"
+            app:destination="@id/nav_pulse" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_pulse"
+        android:name="com.example.emergon.pulse"
+        android:label = "@string/pulse"
+        tools:layout="@layout/fragment_pulse" >
+        <action
+            android:id="@+id/action_nav_pulse_to_nav_reminder"
+            app:destination="@id/nav_reminder" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_reminder"
+        android:name="com.example.emergon.Reminder"
+        android:label = "Medicine Reminder"
+        tools:layout="@layout/fragment_reminder" >
+        <action
+            android:id="@+id/action_nav_reminder_to_nav_medical"
+            app:destination="@id/nav_medical" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_medical"
+        android:name="com.example.emergon.Medical"
+        android:label = "First Aid &amp; Emergency"
+        tools:layout="@layout/fragment_medical" />
 </navigation>
