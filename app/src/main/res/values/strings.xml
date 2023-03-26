@@ -25,6 +25,9 @@
     <string name="menu_map">Prescriptions</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="location">GPS Location</string>
+    <string name="pulse">patient pulse</string>
+    <string name="reminder">Thank You,I am grateful for the time you\'ve taken to read my application, I really appreciate your consideration of my application</string>
 
     <string name="we_will_send_you_an_one_time_otp_on_this_given_mobile_number">We will send you an one time otp on this given mobile number</string>
     <string name="patient_login">PATIENT LOGIN</string>
